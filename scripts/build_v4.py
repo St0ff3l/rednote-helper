@@ -50,9 +50,7 @@ def split(value): return add('text.split',text=value,WFTextSeparator='New Lines'
 def choose(value, prompt): return add('choosefromlist',WFInput=value,WFChooseFromListActionPrompt=prompt,WFChooseFromListActionSelectMultiple=True,WFChooseFromListActionSelectAll=True)
 def url_https(value): return add('text.replace',WFInput=text(value),WFReplaceTextFind='http://',WFReplaceTextReplace='https://',WFReplaceTextRegularExpression=False)
 
-add('comment', WFCommentActionText='V4.2：参考用户提供的“空什么格 / 小红书下载器”指令。先分流 Live / 图片 / 视频，再解析、选择和保存。Live/视频沿用 qsy.jiejing.fun / a.jiejing.fun 服务；静态图片本地读取笔记原图标识，从原图端点下载。Live 保存参考小红书助手pro v4.7 的动图工厂文件动作，传入独立封面和视频文件。Live 解析仍需实况捷径。没有在 iPhone 验证保存，不承诺所有动态源无水印。')
-u=add('gettext',WFTextActionText=''); add('setvariable',WFInput=out(u),WFVariableName='授权码')
-add('comment',WFCommentActionText='上方文本留空使用参考服务的免费额度；已有作者授权码可填入。Live 解析需要“实况捷径”App，Live 保存需要“动图工厂”App；正常使用服务额度，不绕过限制。')
+add('comment', WFCommentActionText='V4.3：参考用户提供的“空什么格 / 小红书下载器”指令。先分流 Live / 图片 / 视频，再解析、选择和保存。Live/视频沿用 qsy.jiejing.fun / a.jiejing.fun 服务；静态图片本地读取笔记原图标识，从原图端点下载。Live 保存参考小红书助手pro v4.7 的动图工厂文件动作，传入独立封面和视频文件。Live 解析仍需实况捷径。没有在 iPhone 验证保存，不承诺所有动态源无水印。')
 links=add('detect.link',WFInput=text({'Value':{'Type':'ExtensionInput'},'WFSerializationType':'WFTextTokenAttachment'}))
 require(out(links),'请复制小红书笔记分享链接，或从分享表单运行。')
 u=first(out(links)); add('setvariable',WFInput=out(u),WFVariableName='笔记链接')
@@ -61,13 +59,15 @@ for mode,title in [(1,'Live 实况图'),(2,'图片'),(3,'视频')]:
     add('choosefrommenu',WFMenuItemTitle=title,WFControlFlowMode=1,GroupingIdentifier=mg)
     n=add('number',WFNumberActionNumber=str(mode));add('setvariable',WFInput=out(n),WFVariableName='保存类型')
     if mode!=2:
+        add('comment',WFCommentActionText='以下 Live/视频解析调用第三方 qsy.jiejing.fun / a.jiejing.fun 服务。下方文本留空使用该服务免费额度；只有已有该服务授权码时才填写。此项属于第三方服务，与本指令的本地图片解析无关。')
+        u=add('gettext',WFTextActionText='');add('setvariable',WFInput=out(u),WFVariableName='第三方服务授权码')
         c=add('downloadurl',WFURL='https://qsy.jiejing.fun/xhs.json',WFHTTPMethod='GET')
         c=add('detect.dictionary',WFInput=out(c));add('setvariable',WFInput=out(c),WFVariableName='服务配置')
     if mode==1:
         add('alert',WFAlertActionTitle='Live 实况图',WFAlertActionMessage='解析需要“实况捷径”，保存需要“动图工厂”。此分支下载独立封面与对应视频文件，再配对存入相册。',WFAlertActionCancelButtonShown=True)
         cred=app('EncryptExtension')
         endpoint=key(var('服务配置'),'livexhs')
-        resp=add('downloadurl',WFURL=text(out(endpoint)),WFHTTPMethod='POST',WFHTTPBodyType='JSON',WFJSONValues=dictionary_fields({'kl':var('授权码'),'url':var('笔记链接'),'payload':out(cred)}))
+        resp=add('downloadurl',WFURL=text(out(endpoint)),WFHTTPMethod='POST',WFHTTPBodyType='JSON',WFJSONValues=dictionary_fields({'kl':var('第三方服务授权码'),'url':var('笔记链接'),'payload':out(cred)}))
     elif mode==2:
         # Read this note's image list locally; do not save a styled preview URL.
         page=add('downloadurl',WFURL=text(var('笔记链接')),WFHTTPMethod='GET',WFHTTPHeaders=dictionary_fields({'User-Agent':'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Version/18.0 Mobile/15E148 Safari/604.1'}))
@@ -98,7 +98,7 @@ for mode,title in [(1,'Live 实况图'),(2,'图片'),(3,'视频')]:
         page=add('downloadurl',WFURL=text(var('笔记链接')),WFHTTPMethod='GET',**headers)
         page=add('gethtmlfromrichtext',WFInput=out(page),WFMakeFullDocument=False)
         endpoint=key(var('服务配置'),'xhshd' if mode==2 else 'hdvideoxhs')
-        target=text(out(endpoint),'?url=',var('笔记链接'),'&v=13&kl=',var('授权码'))
+        target=text(out(endpoint),'?url=',var('笔记链接'),'&v=13&kl=',var('第三方服务授权码'))
         resp=add('downloadurl',WFURL=target,WFHTTPMethod='POST',WFHTTPBodyType='File',WFRequestVariable=out(page),**headers)
     add('setvariable',WFInput=out(resp),WFVariableName='解析响应')
 add('choosefrommenu',WFControlFlowMode=2,GroupingIdentifier=mg)
