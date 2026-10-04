@@ -2,7 +2,7 @@
 import base64,copy,plistlib,uuid
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
-p=plistlib.load(open(ROOT/'work/xhs-v4-unsigned.shortcut','rb'))
+p=plistlib.load(open(ROOT/'work/xhs-v1-unsigned.shortcut','rb'))
 def out(u):return {'Value':{'Type':'ActionOutput','OutputUUID':u,'OutputName':'结果'},'WFSerializationType':'WFTextTokenAttachment'}
 def action(k,u=None,**q):q['UUID']=u or str(uuid.uuid4()).upper();return {'WFWorkflowActionIdentifier':'is.workflow.actions.'+k,'WFWorkflowActionParameters':q}
 def literal(s,u=None):return action('gettext',u,WFTextActionText=s)
@@ -45,15 +45,15 @@ for mode,label in [(1,'live'),(2,'image'),(3,'video'),(2,'service-error')]:
    x=action('gettext',u,WFTextActionText=q['WFNotificationActionBody'])
   result.append(x)
  t=copy.deepcopy(p);t['WFWorkflowActions']=result;t['WFWorkflowHasShortcutInputVariables']=False;t['WFWorkflowTypes']=[]
- plistlib.dump(t,open(ROOT/'work'/('test-v4-'+label+'.shortcut'),'wb'))
+ plistlib.dump(t,open(ROOT/'work'/('test-v1-'+label+'.shortcut'),'wb'))
 print('Fixtures: service reply + local files; save calls captured, not executed')
 
 if __name__ == '__main__':
  import subprocess
  for label in ('live','image','video','service-error'):
-  run=subprocess.run(['swift','work/run-native.swift',f'work/test-v4-{label}.shortcut'],cwd=ROOT,capture_output=True,text=True)
+  run=subprocess.run(['swift','work/run-native.swift',f'work/test-v1-{label}.shortcut'],cwd=ROOT,capture_output=True,text=True)
   log=run.stdout+run.stderr
-  (ROOT/'work'/f'v4-{label}.log').write_text(log)
+  (ROOT/'work'/f'v1-{label}.log').write_text(log)
   assert run.returncode == 0 and 'DONE OK false' in log, (label,log[-1500:])
   if label=='service-error':
    assert 'fixture service unavailable' in log and 'CAPTURE_SUCCESS_NOTIFICATION' not in log and 'CAPTURE_PHOTOS_SAVE' not in log

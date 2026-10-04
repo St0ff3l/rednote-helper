@@ -9,7 +9,7 @@ import uuid
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SHORTCUT = ROOT / "work/xhs-v4-unsigned.shortcut"
+SHORTCUT = ROOT / "work/xhs-v1-unsigned.shortcut"
 SAMPLES = [
     ("live-2qp-mobile.html", 10),
     ("live-7e2g-mobile.html", 9),
@@ -102,7 +102,14 @@ open_app_store = next(
     (i, item) for i, item in enumerate(setup_block)
     if item["WFWorkflowActionIdentifier"] == "is.workflow.actions.openurl"
 )
-app_store_url = open_app_store[1]["WFWorkflowActionParameters"]["WFURL"]["Value"]["string"]
+open_input = open_app_store[1]["WFWorkflowActionParameters"]["WFInput"]["Value"]
+url_source_uuid = open_input["OutputUUID"]
+url_source = next(
+    item for item in setup_block[:open_app_store[0]]
+    if item["WFWorkflowActionParameters"].get("UUID") == url_source_uuid
+)
+assert url_source["WFWorkflowActionIdentifier"] == "is.workflow.actions.gettext"
+app_store_url = url_source["WFWorkflowActionParameters"]["WFTextActionText"]
 assert app_store_url == "https://apps.apple.com/us/app/id6762482512?l=zh-Hans-CN"
 assert continue_index < download_index < open_app_store[0] < len(setup_block) - 1
 assert setup_block[open_app_store[0] + 1]["WFWorkflowActionIdentifier"] == "is.workflow.actions.exit", "App Store branch must end the current run"
@@ -150,7 +157,7 @@ for sample_name, expected_count in SAMPLES:
         WFMatchTextCaseSensitive=True,
     )
     count_pairs = action("count", Input=output(match_pairs["WFWorkflowActionParameters"]["UUID"]), WFCountType="Items")
-    report = action("gettext", WFTextActionText=text_token(count_pairs["WFWorkflowActionParameters"]["UUID"], "V46_PAIR_MATCHES="))
+    report = action("gettext", WFTextActionText=text_token(count_pairs["WFWorkflowActionParameters"]["UUID"], "V1_PAIR_MATCHES="))
     block[pair_variable_index + 1:pair_variable_index + 1] = [match_pairs, count_pairs, report]
 
     response_var = action("getvariable", WFVariable=variable("解析响应"))
@@ -168,7 +175,7 @@ for sample_name, expected_count in SAMPLES:
         WFMatchTextCaseSensitive=True,
     )
     count_code = action("count", Input=output(match_code["WFWorkflowActionParameters"]["UUID"]), WFCountType="Items")
-    report_code = action("gettext", WFTextActionText=text_token(count_code["WFWorkflowActionParameters"]["UUID"], "V46_CODE_MATCHES="))
+    report_code = action("gettext", WFTextActionText=text_token(count_code["WFWorkflowActionParameters"]["UUID"], "V1_CODE_MATCHES="))
     response_body = action(
         "getvalueforkey",
         WFInput=output(response_dictionary["WFWorkflowActionParameters"]["UUID"]),
@@ -191,7 +198,7 @@ for sample_name, expected_count in SAMPLES:
     count_wrapped_pairs = action("count", Input=output(match_wrapped_pairs["WFWorkflowActionParameters"]["UUID"]), WFCountType="Items")
     report_wrapped_pairs = action(
         "gettext",
-        WFTextActionText=text_token(count_wrapped_pairs["WFWorkflowActionParameters"]["UUID"], "V46_WRAPPED_PAIR_MATCHES="),
+        WFTextActionText=text_token(count_wrapped_pairs["WFWorkflowActionParameters"]["UUID"], "V1_WRAPPED_PAIR_MATCHES="),
     )
     block.extend([
         response_var,
@@ -212,7 +219,7 @@ for sample_name, expected_count in SAMPLES:
     fixture["WFWorkflowActions"] = block
     fixture["WFWorkflowTypes"] = []
     fixture["WFWorkflowHasShortcutInputVariables"] = False
-    fixture_path = ROOT / "work" / f"test-v4-live-{expected_count}.shortcut"
+    fixture_path = ROOT / "work" / f"test-v1-live-{expected_count}.shortcut"
     plistlib.dump(fixture, open(fixture_path, "wb"))
 
     run = subprocess.run(
@@ -223,10 +230,10 @@ for sample_name, expected_count in SAMPLES:
         timeout=60,
     )
     log = run.stdout + run.stderr
-    (ROOT / "work" / f"test-v4-live-{expected_count}.log").write_text(log)
-    expected_report = f"V46_PAIR_MATCHES={expected_count}"
-    expected_code_report = "V46_CODE_MATCHES=1"
-    expected_wrapped_report = f"V46_WRAPPED_PAIR_MATCHES={expected_count}"
+    (ROOT / "work" / f"test-v1-live-{expected_count}.log").write_text(log)
+    expected_report = f"V1_PAIR_MATCHES={expected_count}"
+    expected_code_report = "V1_CODE_MATCHES=1"
+    expected_wrapped_report = f"V1_WRAPPED_PAIR_MATCHES={expected_count}"
     assert run.returncode == 0 and "DONE OK false" in log, (sample_name, log[-2000:])
     assert expected_report in log, (sample_name, expected_report, log[-2500:])
     assert expected_code_report in log, (sample_name, expected_code_report, log[-3500:])

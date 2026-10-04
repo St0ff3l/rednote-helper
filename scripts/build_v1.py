@@ -60,7 +60,7 @@ def choose(value, prompt):
     )
 def url_https(value): return add('text.replace',WFInput=text(value),WFReplaceTextFind='http://',WFReplaceTextReplace='https://',WFReplaceTextRegularExpression=False)
 
-add('comment', WFCommentActionText='V4.6：图片、Live 与普通视频均在快捷指令内读取小红书移动网页状态并提取 CDN 地址，不调用 Pro/qsy 解析云服务。Live 下载封面和配对视频文件，再交给动图工厂保存。动态资源是否可访问、封面尺寸及源视频水印仍需 iPhone 验证。')
+add('comment', WFCommentActionText='小红书助手 v1：图片、Live 与普通视频均在快捷指令内读取小红书移动网页状态并提取 CDN 地址，不调用 Pro/qsy 解析云服务。Live 下载封面和配对视频文件，再交给动图工厂保存。动态资源是否可访问、封面尺寸及源视频水印仍需 iPhone 验证。')
 links=add('detect.link',WFInput=text({'Value':{'Type':'ExtensionInput'},'WFSerializationType':'WFTextTokenAttachment'}))
 require(out(links),'🔗 没有找到分享链接\n请复制完整的小红书笔记分享文字，或从分享表单运行。')
 u=first(out(links)); add('setvariable',WFInput=out(u),WFVariableName='笔记链接')
@@ -77,7 +77,8 @@ for mode,title in [(1,'📸 Live 实况图'),(2,'🖼️ 图片'),(3,'🎬 视�
         add('choosefrommenu',WFMenuItemTitle='✅ 已安装，继续',WFControlFlowMode=1,GroupingIdentifier=live_setup)
         add('nothing')
         add('choosefrommenu',WFMenuItemTitle='📲 未安装，去 App Store 下载',WFControlFlowMode=1,GroupingIdentifier=live_setup)
-        add('openurl',WFURL=text('https://apps.apple.com/us/app/id6762482512?l=zh-Hans-CN'))
+        store_page=add('gettext',WFTextActionText='https://apps.apple.com/us/app/id6762482512?l=zh-Hans-CN')
+        add('openurl',WFInput=out(store_page))
         add('exit')
         add('choosefrommenu',WFControlFlowMode=2,GroupingIdentifier=live_setup)
         headers=dictionary_fields({'User-Agent':'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Version/18.0 Mobile/15E148 Safari/604.1'})
@@ -196,7 +197,7 @@ selected=choose(out(media),'🎬 选择视频，确认后存相册（可多选�
 add('savetocameraroll',WFInput=out(selected));success(out(selected),' 个视频')
 end(imageg)
 end(liveg)
-root={'WFWorkflowName':'小红书素材助手 V4.6','WFWorkflowMinimumClientVersion':1113,'WFWorkflowMinimumClientVersionString':'1113','WFWorkflowClientVersion':'5037.0.19','WFWorkflowIcon':{'WFWorkflowIconStartColor':4282601983,'WFWorkflowIconGlyphNumber':59726},'WFWorkflowActions':A,'WFWorkflowTypes':['ActionExtension'],'WFWorkflowInputContentItemClasses':['WFURLContentItem','WFStringContentItem','WFSafariWebPageContentItem'],'WFWorkflowNoInputBehavior':{'Name':'WFWorkflowNoInputBehaviorGetClipboard','Parameters':{}},'WFWorkflowHasShortcutInputVariables':True,'WFWorkflowImportQuestions':[]}
+root={'WFWorkflowName':'小红书助手','WFWorkflowMinimumClientVersion':1113,'WFWorkflowMinimumClientVersionString':'1113','WFWorkflowClientVersion':'5037.0.19','WFWorkflowIcon':{'WFWorkflowIconStartColor':4282601983,'WFWorkflowIconGlyphNumber':59726},'WFWorkflowActions':A,'WFWorkflowTypes':['ActionExtension'],'WFWorkflowInputContentItemClasses':['WFURLContentItem','WFStringContentItem','WFSafariWebPageContentItem'],'WFWorkflowNoInputBehavior':{'Name':'WFWorkflowNoInputBehaviorGetClipboard','Parameters':{}},'WFWorkflowHasShortcutInputVariables':True,'WFWorkflowImportQuestions':[]}
 (ROOT/'work').mkdir(exist_ok=True)
-plistlib.dump(root,open(ROOT/'work/xhs-v4-unsigned.shortcut','wb'),fmt=plistlib.FMT_BINARY)
+plistlib.dump(root,open(ROOT/'work/xhs-v1-unsigned.shortcut','wb'),fmt=plistlib.FMT_BINARY)
 print('Generated',len(A),'actions')
