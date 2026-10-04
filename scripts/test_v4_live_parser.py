@@ -72,6 +72,42 @@ selection_actions = [
 assert len(selection_actions) == 3, f"expected Live, image and video selectors; found {len(selection_actions)}"
 assert all(item.get("WFChooseFromListActionSelectMultiple") is True for item in selection_actions)
 assert all(item.get("WFChooseFromListActionSelectAll") is False for item in selection_actions), "selectors must start with nothing selected"
+
+# Live uses GIF Factory; show an install/continue menu every time because iOS
+# Shortcuts cannot reliably inspect the installed-app inventory.
+setup_index = next(
+    i for i, item in enumerate(actions)
+    if item["WFWorkflowActionIdentifier"] == "is.workflow.actions.choosefrommenu"
+    and item["WFWorkflowActionParameters"].get("WFMenuPrompt") == "🧰 Live 保存需要动图工厂"
+)
+setup = actions[setup_index]["WFWorkflowActionParameters"]
+setup_group = setup["GroupingIdentifier"]
+assert setup["WFMenuItems"] == ["✅ 已安装，继续", "📲 未安装，去 App Store 下载"]
+setup_end = next(
+    i for i in range(setup_index + 1, len(actions))
+    if actions[i]["WFWorkflowActionIdentifier"] == "is.workflow.actions.choosefrommenu"
+    and actions[i]["WFWorkflowActionParameters"].get("WFControlFlowMode") == 2
+    and actions[i]["WFWorkflowActionParameters"].get("GroupingIdentifier") == setup_group
+)
+setup_block = actions[setup_index:setup_end + 1]
+continue_index = next(
+    i for i, item in enumerate(setup_block)
+    if item["WFWorkflowActionParameters"].get("WFMenuItemTitle") == "✅ 已安装，继续"
+)
+download_index = next(
+    i for i, item in enumerate(setup_block)
+    if item["WFWorkflowActionParameters"].get("WFMenuItemTitle") == "📲 未安装，去 App Store 下载"
+)
+open_app_store = next(
+    (i, item) for i, item in enumerate(setup_block)
+    if item["WFWorkflowActionIdentifier"] == "is.workflow.actions.openurl"
+)
+app_store_url = open_app_store[1]["WFWorkflowActionParameters"]["WFURL"]["Value"]["string"]
+assert app_store_url == "https://apps.apple.com/us/app/id6762482512?l=zh-Hans-CN"
+assert continue_index < download_index < open_app_store[0] < len(setup_block) - 1
+assert setup_block[open_app_store[0] + 1]["WFWorkflowActionIdentifier"] == "is.workflow.actions.exit", "App Store branch must end the current run"
+assert "is.workflow.actions.nothing" in [item["WFWorkflowActionIdentifier"] for item in setup_block[continue_index + 1:download_index]], "continue branch must fall through without opening the App Store"
+
 download_index = next(
     i for i, item in enumerate(actions)
     if item["WFWorkflowActionIdentifier"] == "is.workflow.actions.downloadurl"
