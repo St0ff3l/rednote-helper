@@ -4,9 +4,9 @@ xhs 素材获取助手：用于 iOS 快捷指令的图片、视频和 Live 素�
 
 ## 当前状态
 
-- 最新优化版：`outputs/xhs-media-helper-v4.1.shortcut`，说明见 `outputs/V4.1动图工厂版说明.md`；原 V4 保留用于回退。
+- 最新优化版：`outputs/xhs-media-helper-v4.2.shortcut`，说明见 `outputs/V4.2原图直接保存版说明.md`；原 V4 保留用于回退。
 - 用户选择沿用参考作者的实况捷径 App 和解析服务。初始菜单分为 Live、图片、视频，支持预览和多选。
-- V4.1 将独立封面 PNG 与视频文件交给动图工厂保存，图片 PNG 与视频使用系统相册。Live 解析仍需要实况捷径的 payload；未接入新卖家的付费解析和设备绑定。
+- V4.2 静态图片本地解析移动网页原图标识，下载原图端点；确认多选后直接保存，移除额外快速查看。Live 将独立封面 PNG 与视频文件交给动图工厂保存，图片 PNG 与视频使用系统相册。Live 解析仍需要实况捷径的 payload；未接入新卖家的付费解析和设备绑定。
 - 三路本地夹具验证通过，已签名；**尚未在 iPhone 验证实际保存，真实解析服务 POST 也未在此环境验证成功**。
 - **动态源无水印与保存后的原尺寸封面仍需验证**；不裁剪或 AI 擦除，不把拆分保存等同于 Live Photo。
 - 不在 Mac 运行下载的 Actions 或实况捷径 App。V3 和免费版实验不作为当前推荐版本。
@@ -38,7 +38,7 @@ xhs 素材获取助手：用于 iOS 快捷指令的图片、视频和 Live 素�
 
 ```sh
 python3 scripts/build_v4.py
-shortcuts sign --mode anyone --input work/xhs-v4-unsigned.shortcut --output outputs/xhs-media-helper-v4.1.shortcut
+shortcuts sign --mode anyone --input work/xhs-v4-unsigned.shortcut --output outputs/xhs-media-helper-v4.2.shortcut
 python3 scripts/test_v4_fixture.py
 ```
 
