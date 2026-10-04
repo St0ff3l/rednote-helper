@@ -60,7 +60,7 @@ def choose(value, prompt):
     )
 def url_https(value): return add('text.replace',WFInput=text(value),WFReplaceTextFind='http://',WFReplaceTextReplace='https://',WFReplaceTextRegularExpression=False)
 
-add('comment', WFCommentActionText='小红书助手 v1：图片、Live 与普通视频均在快捷指令内读取小红书移动网页状态并提取 CDN 地址，不调用 Pro/qsy 解析云服务。Live 下载封面和配对视频文件，再交给动图工厂保存。动态资源是否可访问、封面尺寸及源视频水印仍需 iPhone 验证。')
+add('comment', WFCommentActionText='小红书助手 v1：图片、Live 与普通视频均在快捷指令内读取小红书移动网页状态并提取 CDN 地址，不调用 Pro/qsy 解析云服务。Live 下载封面和配对视频文件，再交给动图工厂保存。')
 links=add('detect.link',WFInput=text({'Value':{'Type':'ExtensionInput'},'WFSerializationType':'WFTextTokenAttachment'}))
 require(out(links),'🔗 没有找到分享链接\n请复制完整的小红书笔记分享文字，或从分享表单运行。')
 u=first(out(links)); add('setvariable',WFInput=out(u),WFVariableName='笔记链接')
