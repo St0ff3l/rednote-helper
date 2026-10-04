@@ -64,6 +64,14 @@ def note_pairs(html):
 
 document = plistlib.load(open(SHORTCUT, "rb"))
 actions = document["WFWorkflowActions"]
+selection_actions = [
+    item["WFWorkflowActionParameters"]
+    for item in actions
+    if item["WFWorkflowActionIdentifier"] == "is.workflow.actions.choosefromlist"
+]
+assert len(selection_actions) == 3, f"expected Live, image and video selectors; found {len(selection_actions)}"
+assert all(item.get("WFChooseFromListActionSelectMultiple") is True for item in selection_actions)
+assert all(item.get("WFChooseFromListActionSelectAll") is False for item in selection_actions), "selectors must start with nothing selected"
 download_index = next(
     i for i, item in enumerate(actions)
     if item["WFWorkflowActionIdentifier"] == "is.workflow.actions.downloadurl"

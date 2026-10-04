@@ -50,7 +50,14 @@ def loop(value):
     g=uid(); add('repeat.each',WFInput=value,WFControlFlowMode=0,GroupingIdentifier=g); return g
 def loop_end(g): return add('repeat.each',WFControlFlowMode=2,GroupingIdentifier=g)
 def split(value): return add('text.split',text=value,WFTextSeparator='New Lines')
-def choose(value, prompt): return add('choosefromlist',WFInput=value,WFChooseFromListActionPrompt=prompt,WFChooseFromListActionSelectMultiple=True,WFChooseFromListActionSelectAll=True)
+def choose(value, prompt):
+    return add(
+        'choosefromlist',
+        WFInput=value,
+        WFChooseFromListActionPrompt=prompt,
+        WFChooseFromListActionSelectMultiple=True,
+        WFChooseFromListActionSelectAll=False,
+    )
 def url_https(value): return add('text.replace',WFInput=text(value),WFReplaceTextFind='http://',WFReplaceTextReplace='https://',WFReplaceTextRegularExpression=False)
 
 add('comment', WFCommentActionText='V4.6：图片、Live 与普通视频均在快捷指令内读取小红书移动网页状态并提取 CDN 地址，不调用 Pro/qsy 解析云服务。Live 下载封面和配对视频文件，再交给动图工厂保存。动态资源是否可访问、封面尺寸及源视频水印仍需 iPhone 验证。')
