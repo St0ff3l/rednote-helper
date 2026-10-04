@@ -4,14 +4,13 @@ xhs 素材获取助手：用于 iOS 快捷指令的图片、视频和 Live 素�
 
 ## 当前状态
 
-- 最新文件：`outputs/小红书选择保存-V3-实况.shortcut`。
-- 静态图下载原尺寸文件；真实样例已验证原尺寸静态图没有平台附加水印。
-- 支持预览、多选；V3 加入 Actions 的“Make Live Photo from Video”动作。当前 Actions 版本需要 iOS 26+。
-- 真实笔记的本地解析与素材匹配测试通过；签名和导入通过。
-- **尚未完成 iPhone 相册保存验证；Live 动态视频无水印目标尚未完成。**
-- 已抽帧确认用户提供的 Live 笔记，其网页动态视频右下角含小红书水印。合成不会消除它。
-- Actions 从视频帧生成封面，不能保留独立原尺寸封面。不得将该合成过程描述为原始 Live Photo 无损还原。
-- 用户选择在 iPhone 测试，不授权在 Mac 运行下载的 Actions App。
+- 最新文件：`outputs/xhs-media-helper-v4.shortcut`，使用说明见 `outputs/V4实况捷径版说明.md`。
+- 用户选择沿用参考作者的实况捷径 App 和解析服务。初始菜单分为 Live、图片、视频，支持预览和多选。
+- Live 将独立封面和对应动态视频交给 App 配对保存；图片由 App 的资源提取动作保存；视频将下载文件交给系统相册。
+- 三路本地夹具验证通过，已签名；**尚未在 iPhone 验证实际保存，真实解析服务 POST 也未在此环境验证成功**。
+- **动态源无水印与保存后的原尺寸封面仍需验证**；不裁剪或 AI 擦除，不把拆分保存等同于 Live Photo。
+- 不在 Mac 运行下载的 Actions 或实况捷径 App。V3 和免费版实验不作为当前推荐版本。
+- 参考作者服务有免费额度及付费限制，详见说明。
 
 ## 文件
 
@@ -38,10 +37,9 @@ xhs 素材获取助手：用于 iOS 快捷指令的图片、视频和 Live 素�
 在项目根目录执行（macOS）：
 
 ```sh
-python3 work/build-v3.py
-shortcuts sign --mode anyone --input work/xhs-v3-unsigned.shortcut --output outputs/小红书选择保存-V3-实况.shortcut
-python3 work/test-v3-real.py
-swift work/run-native.swift work/test-v3-real-live.shortcut
+python3 scripts/build_v4.py
+shortcuts sign --mode anyone --input work/xhs-v4-unsigned.shortcut --output outputs/xhs-media-helper-v4.shortcut
+python3 scripts/test_v4_fixture.py
 ```
 
-签名不代表手机保存验证完成。测试夹具替代了联网、用户选择和相册动作，只验证解析及对应媒体地址。
+夹具依赖本地 `work/image-0.bin`、`work/live-sample.mp4` 及原生执行器。测试替换联网、用户选择、App 与相册调用，只验证流程和输入，不能证明手机保存成功。

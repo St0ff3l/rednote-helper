@@ -308,3 +308,163 @@ V3 文件已经生成并成功导入快捷指令，真实笔记中“选中图�
 ## 助手 · 2026-10-04T04:03:36.268Z
 
 文件已经迁移到 `xhs-media-helper`，195 个文件的哈希校验一致；两张原始截图和完整对话记录也已存档。README 已注明目前的验证范围，以及尚未解决的 Live 视频水印问题。接下来推送到私密仓库，并让原路径继续指向新目录，保留旧文件链接。
+
+
+## 助手 · 2026-10-04T04:04:46.756Z
+
+已迁移，项目名全小写：`xhs-media-helper`。
+
+- 本地目录：`/Users/stoffel/CodeFile/xhs-media-helper`
+- [GitHub 私密仓库](https://github.com/St0ff3l/xhs-media-helper)：已推送并确认 PRIVATE
+- 已保存全部项目文件、快捷指令、测试记录、截图和完整对话快照。
+- 原目录已链接到新目录，之前的文件链接仍可用。
+
+当前聊天保留，对话存档已进入仓库。
+
+## 用户 · 2026-10-04T04:05:02.789Z
+
+# AGENTS.md instructions for /Users/stoffel/CodeFile/xhs-media-helper
+
+<INSTRUCTIONS>
+These AGENTS.md instructions replace all previously provided AGENTS.md instructions.
+
+## Git 分支命名
+
+创建新分支时不要默认使用 `codex/`，请根据任务类型选择前缀：
+
+- 新功能：`feat/<description>`
+- 修复问题：`fix/<description>`
+- 工程维护：`chore/<description>`
+- 文档变更：`docs/<description>`
+- 发布分支：`release/<version>`
+
+分支名使用小写 kebab-case。任务类型明确时直接选择对应前缀；无法判断时再询问我。
+
+## Git 合并策略
+
+除非用户明确要求其他方式，创建 Pull Request 后默认使用 GitHub 的普通 Merge（Create a merge commit），不要使用 Squash and merge 或 Rebase and merge。
+
+## GitHub Issue 生命周期
+
+- 修复 Issue 后，创建或合并 Pull Request 不得自动关闭、归档或标记该 Issue 为已解决。
+- PR 合并仅表示代码已合入，不代表已发布、部署、验证或确认问题已解决；必须等我明确确认发布并验证通过后，才允许关闭 Issue。
+- 关联 Issue 时不要使用 `Fixes #123`、`Closes #123`、`Resolves #123` 等 GitHub 自动关闭关键词，改用 `Refs #123` 或 `Related to #123`。
+- 除非我明确要求，否则不要执行关闭 Issue 的操作。
+
+--- project-doc ---
+
+# 项目约定
+
+- 分支名全部小写 kebab-case，按任务使用 `feat/`、`fix/`、`chore/`、`docs/`、`release/` 前缀；不要默认使用 `codex/`。
+- PR 默认使用普通 Merge（Create a merge commit），不使用 Squash 或 Rebase。
+- 关联 Issue 使用 Refs 或 Related to，不使用自动关闭关键词。未经用户确认发布并验证通过，不得关闭 Issue。
+- 用户要求预览、多选、真实 Live Photo 保存，并避免小红书右下角附加水印。不能把拆分保存等同于保存 Live Photo。
+- 不得把签名、导入或夹具测试表述为 iPhone 端到端保存成功。
+- 动态源无水印与原尺寸封面配对仍未完成；不使用裁剪或 AI 擦除替代原素材。
+- 用户授权仅生成快捷指令并由其在 iPhone 测试，不在 Mac 运行下载的 Actions App。
+- 现有私密对话和素材存档不得公开发布。
+
+</INSTRUCTIONS>
+
+<environment_context>
+  <cwd>/Users/stoffel/CodeFile/xhs-media-helper</cwd>
+  <shell>zsh</shell>
+  <current_date>2026-10-04</current_date>
+  <timezone>Asia/Kuala_Lumpur</timezone>
+  <filesystem><workspace_roots><root>/Users/stoffel/CodeFile/xhs-media-helper</root><root>/Users/stoffel/.codex/visualizations/2026/10/04/01a104e8-3552-72b3-bfb2-654811823cf2</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
+</environment_context>
+
+## 用户 · 2026-10-04T04:05:02.839Z
+
+你先把ignore弄了在push啊
+
+
+## 助手 · 2026-10-04T04:05:06.851Z
+
+我先整理 `.gitignore`，把下载的 App、临时素材和测试缓存从 Git 跟踪中移除，保留本地文件，再推送清理后的提交。
+
+
+## 助手 · 2026-10-04T04:05:57.575Z
+
+已补好 `.gitignore` 并推送。
+
+下载的 App、临时素材、日志、测试产物和原始对话 JSONL 已取消跟踪，本地文件全部保留；源码、快捷指令和说明继续跟踪。
+
+之前已推送的文件仍在 Git 历史中，本次没有重写历史。
+
+## 用户 · 2026-10-04T04:18:15.048Z
+
+[https://www.icloud.com/shortcuts/48c45bf28b50473f82c818d5977d1a14](https://www.icloud.com/shortcuts/48c45bf28b50473f82c818d5977d1a14)
+
+你完全参考这个逻辑做，现在的v3还是存不到相册里，然后也像这个做一下 live 图片 视频的初始分流
+
+
+## 助手 · 2026-10-04T04:18:21.906Z
+
+我先读取你给的快捷指令，按它的逻辑重做 Live、图片、视频的初始分流和保存步骤，并排查 V3 没存进相册的原因。
+
+
+## 助手 · 2026-10-04T04:19:17.172Z
+
+读到参考指令了：它先让用户选择类型，再调用解析服务；Live 分支把封面地址和视频地址交给「实况捷径」保存，图片分支也用这个 App 的资源提取动作处理文件类型。这与 V3 的下载、合成方式不同。我会照它重做三条分支，并沿用它对保存受限结果的检查。
+
+
+## 用户 · 2026-10-04T04:20:27.776Z
+
+<send_user_message_question_reply>
+[{"questionItemId":"[\"request_user_input_async\",\"call_t3dkKsAq8NNPM2Ibp8Fvv8OT\",0]","question":"参考指令的 Live 保存和高清图片下载依赖「实况捷径」App。你的 iPhone 已安装它吗？我会按这个依赖生成新版，静态图片/视频解析也会沿用参考指令的第三方服务。","answer":"已经安装"}]
+</send_user_message_question_reply>
+
+## 用户 · 2026-10-04T04:20:27.779Z
+
+<external_codex_apps_open_page>{"page_id":null}</external_codex_apps_open_page>
+
+## 用户 · 2026-10-04T04:20:27.783Z
+
+哦不对，我没有实况捷径，这个是一个应用还是说是一个快捷方式
+
+
+## 助手 · 2026-10-04T04:20:35.691Z
+
+「实况捷径」是一个独立的 iPhone App，安装后会给快捷指令增加“转换为实况照片”等动作。你分享的那个快捷指令通过它保存 Live Photo。
+
+这是它的 [App Store 页面](https://apps.apple.com/cn/app/id6744431514)。我继续按这套逻辑生成新版，Live 分支会注明需要这个 App。作者目前说明每天可免费保存 10 张实况图，超额需会员。[额度说明](https://qsy.jiejing.fun/faq)
+
+
+## 用户 · 2026-10-04T04:22:39.210Z
+
+你看看有没有完全免费的办法？走官方action？
+
+
+## 助手 · 2026-10-04T04:22:56.273Z
+
+可以继续走完全免费的路线。若你指苹果自带动作，图片和视频可以用它们下载、选择和保存；Live 合成还需要扩展动作。免费的 Actions App 能从视频生成 Live Photo，但封面取自视频帧，不能传入独立原图。
+
+我会把免费路线和刚才的参考服务版区分清楚，继续核查能否保留原封面并完全免费保存实况。
+
+
+## 助手 · 2026-10-04T04:25:07.782Z
+
+我在做一个免费版：仍然先选 Live、图片、视频；图片和视频用系统动作下载、识别文件类型，再把选中的完整素材交给“保存到相册”。Live 使用免费 Actions App。
+
+它会保留两个限制：Live 封面来自视频帧；你那条笔记的网页动态视频本身带水印，合成不会去掉。我还不能确认完全免费的无水印原实况获取办法。
+
+
+## 用户 · 2026-10-04T04:25:40.947Z
+
+那这样吧，那还是完全按照他的做，走实况捷径吧
+
+
+## 助手 · 2026-10-04T04:26:11.765Z
+
+好，回到「实况捷径」路线。新版会先分流 Live、图片、视频，沿用参考指令的解析服务、Live 配对和图片资源提取动作；免费版的尝试先停下。你需要在 iPhone 安装并打开一次「实况捷径」，才能测试新版的 Live 和图片分支。
+
+
+## 助手 · 2026-10-04T04:31:06.073Z
+
+新版的三路流程已经接上参考指令。我正在核对分支判断和传入保存动作的文件，避免再次出现运行结束却没有交给相册保存的问题；最终保存仍由你在 iPhone 上验证。
+
+
+## 助手 · 2026-10-04T04:32:21.155Z
+
+分支判断已修好，Live 封面和视频的配对也通过了本地测试。图片改用参考指令的“资源提取”动作直接保存，Live 交给“实况捷径”配对保存，视频走系统相册动作。这个方案仍受作者服务额度限制，实际无水印和相册保存结果需要手机测试。
