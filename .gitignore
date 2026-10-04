@@ -3,3 +3,23 @@ __pycache__/
 *.pyc
 .env
 .env.*
+
+# Local research downloads, generated fixtures, media, and execution logs.
+# Keep the source tools and the reference workflow needed by the builders.
+/work/*
+!/work/*.py
+!/work/*.swift
+!/work/*.js
+!/work/reference-decoded/
+/work/reference-decoded/*
+!/work/reference-decoded/Shortcut.wflow
+
+# Full runtime transcript remains local; readable conversation stays tracked.
+/archive/conversation.jsonl
+
+# Sample media stays local; signed shortcuts and instructions are deliverables.
+/outputs/*.jpg
+/outputs/*.jpeg
+/outputs/*.png
+/outputs/*.mp4
+/outputs/*.mov
