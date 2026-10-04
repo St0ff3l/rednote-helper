@@ -53,7 +53,7 @@ def split(value): return add('text.split',text=value,WFTextSeparator='New Lines'
 def choose(value, prompt): return add('choosefromlist',WFInput=value,WFChooseFromListActionPrompt=prompt,WFChooseFromListActionSelectMultiple=True,WFChooseFromListActionSelectAll=True)
 def url_https(value): return add('text.replace',WFInput=text(value),WFReplaceTextFind='http://',WFReplaceTextReplace='https://',WFReplaceTextRegularExpression=False)
 
-add('comment', WFCommentActionText='V4.5：图片、Live 与普通视频均在快捷指令内读取小红书移动网页状态并提取 CDN 地址，不调用 Pro/qsy 解析云服务。Live 下载封面和配对视频文件，再交给动图工厂保存。动态资源是否可访问、封面尺寸及源视频水印仍需 iPhone 验证。')
+add('comment', WFCommentActionText='V4.6：图片、Live 与普通视频均在快捷指令内读取小红书移动网页状态并提取 CDN 地址，不调用 Pro/qsy 解析云服务。Live 下载封面和配对视频文件，再交给动图工厂保存。动态资源是否可访问、封面尺寸及源视频水印仍需 iPhone 验证。')
 links=add('detect.link',WFInput=text({'Value':{'Type':'ExtensionInput'},'WFSerializationType':'WFTextTokenAttachment'}))
 require(out(links),'🔗 没有找到分享链接\n请复制完整的小红书笔记分享文字，或从分享表单运行。')
 u=first(out(links)); add('setvariable',WFInput=out(u),WFVariableName='笔记链接')
@@ -82,8 +82,11 @@ for mode,title in [(1,'📸 Live 实况图'),(2,'🖼️ 图片'),(3,'🎬 视�
         streams=key(var('Repeat Item'),'stream.h264');streams=first(out(streams));video=key(out(streams),'masterUrl')
         require(out(video),'📸 Live 项目没有动态视频地址，无法配对保存。')
         video=url_https(out(video))
-        pair=text('{"pic":"',out(cover),'","video":"',out(video),'"}')
-        add('appendvariable',WFInput=pair,WFVariableName='本地Live配对JSON')
+        # Materialize the tokenized text as a real Text action output before
+        # appending it. Append to Variable silently ignores an inline text-token
+        # parameter here, leaving the Live pair collection empty.
+        pair=add('gettext',WFTextActionText=text('{"pic":"',out(cover),'","video":"',out(video),'"}'))
+        add('appendvariable',WFInput=out(pair),WFVariableName='本地Live配对JSON')
         add('conditional',WFControlFlowMode=2,GroupingIdentifier=liveg)
         loop_end(g)
         pairs=add('getvariable',WFVariable=var('本地Live配对JSON'));require(out(pairs),'📸 这条笔记没有找到可用的 Live 图。')
@@ -172,7 +175,7 @@ selected=choose(out(media),'🎬 选择视频，确认后存相册（可多选�
 add('savetocameraroll',WFInput=out(selected));success(out(selected),' 个视频')
 end(imageg)
 end(liveg)
-root={'WFWorkflowMinimumClientVersion':1113,'WFWorkflowMinimumClientVersionString':'1113','WFWorkflowClientVersion':'5037.0.19','WFWorkflowIcon':{'WFWorkflowIconStartColor':4282601983,'WFWorkflowIconGlyphNumber':59726},'WFWorkflowActions':A,'WFWorkflowTypes':['ActionExtension'],'WFWorkflowInputContentItemClasses':['WFURLContentItem','WFStringContentItem','WFSafariWebPageContentItem'],'WFWorkflowNoInputBehavior':{'Name':'WFWorkflowNoInputBehaviorGetClipboard','Parameters':{}},'WFWorkflowHasShortcutInputVariables':True,'WFWorkflowImportQuestions':[]}
+root={'WFWorkflowName':'小红书素材助手 V4.6','WFWorkflowMinimumClientVersion':1113,'WFWorkflowMinimumClientVersionString':'1113','WFWorkflowClientVersion':'5037.0.19','WFWorkflowIcon':{'WFWorkflowIconStartColor':4282601983,'WFWorkflowIconGlyphNumber':59726},'WFWorkflowActions':A,'WFWorkflowTypes':['ActionExtension'],'WFWorkflowInputContentItemClasses':['WFURLContentItem','WFStringContentItem','WFSafariWebPageContentItem'],'WFWorkflowNoInputBehavior':{'Name':'WFWorkflowNoInputBehaviorGetClipboard','Parameters':{}},'WFWorkflowHasShortcutInputVariables':True,'WFWorkflowImportQuestions':[]}
 (ROOT/'work').mkdir(exist_ok=True)
 plistlib.dump(root,open(ROOT/'work/xhs-v4-unsigned.shortcut','wb'),fmt=plistlib.FMT_BINARY)
 print('Generated',len(A),'actions')

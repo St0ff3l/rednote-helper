@@ -4,11 +4,10 @@ xhs 素材获取助手：用于 iOS 快捷指令的图片、视频和 Live 素�
 
 ## 当前状态
 
-- [iCloud 导入小红书素材助手 V4.5](https://www.icloud.com/shortcuts/851d0e6ab7da4c409d4aeeb6d241ee06)。
-- 最新优化版：`outputs/小红书素材助手 V4.5.shortcut`，说明见 `outputs/V4.5本地解析版说明.md`；原 V4 保留用于回退。
-- 用户选择沿用参考作者的实况捷径 App 和解析服务。初始菜单分为 Live、图片、视频，支持预览和多选。
-- V4.2 静态图片本地解析移动网页原图标识，下载原图端点；确认多选后直接保存，移除额外快速查看。Live 将独立封面 PNG 与视频文件交给动图工厂保存，图片 PNG 与视频使用系统相册。Live 解析仍需要实况捷径的 payload；未接入新卖家的付费解析和设备绑定。
-- 用户已反馈 V4.3 可成功保存。V4.5 沿用成功数量通知和详细分支错误提示，Live 与视频解析已改为本地读取网页状态；该本地解析尚待 iPhone 实测。
+- 最新版：`outputs/小红书素材助手 V4.6.shortcut`，说明见 `outputs/V4.6本地解析修复说明.md`；原 V4.5 和更早版本保留用于回退。
+- 初始菜单分为 Live、图片、视频，支持预览和多选；静态图片、Live 和普通视频都在快捷指令内读取小红书移动网页状态。Live 下载独立封面和配对视频后交给动图工厂保存，图片和视频使用系统相册。
+- Live 和视频下载仍需要联网访问小红书页面及 CDN；没有接入第三方解析云服务、授权码或设备绑定。
+- 用户已反馈 V4.3 可成功保存。V4.6 修复 Live 配对 JSON 未追加进列表的问题；用两条真实 Live 笔记（10 张、9 张）在 macOS 快捷指令运行环境验证解析和配对列表。Live、图片、视频的端到端相册保存仍待 iPhone 实测。
 - **动态源无水印与保存后的原尺寸封面仍需验证**；不裁剪或 AI 擦除，不把拆分保存等同于 Live Photo。
 - 不在 Mac 运行下载的 Actions 或实况捷径 App。V3 和免费版实验不作为当前推荐版本。
 - 自有图片流程没有授权码设置；只有调用第三方的 Live/视频分支说明其服务额度与可选授权码。
@@ -39,8 +38,9 @@ xhs 素材获取助手：用于 iOS 快捷指令的图片、视频和 Live 素�
 
 ```sh
 python3 scripts/build_v4.py
-shortcuts sign --mode anyone --input work/xhs-v4-unsigned.shortcut --output 'outputs/小红书素材助手 V4.5.shortcut'
+shortcuts sign --mode anyone --input work/xhs-v4-unsigned.shortcut --output 'outputs/小红书素材助手 V4.6.shortcut'
+python3 scripts/test_v4_live_parser.py
 python3 scripts/test_v4_fixture.py
 ```
 
-夹具依赖本地 `work/image-0.bin`、`work/live-sample.mp4` 及原生执行器。测试替换联网、用户选择、App 与相册调用，只验证流程和输入，不能证明手机保存成功。
+本地网页测试需要 `work/live-2qp-mobile.html` 与 `work/live-7e2g-mobile.html`；一般流程夹具依赖 `work/image-0.bin`、`work/live-sample.mp4` 和原生执行器。测试替换联网、用户选择、App 与相册调用，只验证解析/流程，不能证明手机保存成功。
