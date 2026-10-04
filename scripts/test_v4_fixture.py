@@ -18,12 +18,19 @@ for mode,label in [(1,'live'),(2,'image'),(3,'video')]:
  for i,x in enumerate(a):
   k=x['WFWorkflowActionIdentifier'];q=x['WFWorkflowActionParameters'];u=q['UUID']
   if k=='is.workflow.actions.downloadurl':
-   following=a[i+1]['WFWorkflowActionIdentifier']
-   data=(ROOT/'work'/('image-0.bin' if mode!=3 else 'live-sample.mp4')).read_bytes()
+   result.append(action('gettext',WFTextActionText=q['WFURL']))
+   nextq=a[i+1]['WFWorkflowActionParameters']
+   is_live_video=mode==1 and nextq.get('Input',{}).get('Value',{}).get('OutputUUID')==u
+   data=(ROOT/'work'/('live-sample.mp4' if mode==3 or is_live_video else 'image-0.bin')).read_bytes()
    l=literal(base64.b64encode(data).decode());result.append(l)
    x=action('base64encode',u,WFInput=out(l['WFWorkflowActionParameters']['UUID']),WFEncodeMode='Decode')
   elif k=='is.workflow.actions.choosefromlist':x=action('getitemfromlist',u,WFInput=q['WFInput'],WFItemSpecifier='Last Item')
   elif k=='is.workflow.actions.previewdocument':x=action('getvariable',u,WFVariable=q['WFInput'])
+  elif k.endswith('SaveLivePhotoFromFilesIntent'):
+   result.append(literal('CAPTURE_LIVE_FILES'))
+   result.append(action('getitemname',WFInput=q['imageFile']))
+   result.append(action('getitemtype',WFInput=q['videoFile']))
+   x=action('nothing',u)
   elif k.endswith('LiveExtension'):
    result.append(action('gettext',WFTextActionText=q['imageURL']));result.append(action('gettext',WFTextActionText=q['videoURL']))
    x=action('number',u,WFNumberActionNumber='0')
@@ -43,9 +50,9 @@ if __name__ == '__main__':
   assert run.returncode == 0 and 'DONE OK false' in log, (label,log[-1500:])
   if label=='live':
    assert ': https://example.test/cover-2' in log and ': https://example.test/video-2' in log
-   assert ': Media' not in log
+   assert 'CAPTURE_LIVE_FILES' in log and ': 2\"' in log and ': Media' in log
   elif label=='image':
-   assert ': https://example.test/two' in log and ': Media' not in log
+   assert ': https://example.test/two' in log and ': Image' in log and ': Media' not in log
   else:
    assert ': Media' in log and ': https://example.test/cover-2' not in log
   print(label, 'fixture passed; App and Photos save calls replaced')

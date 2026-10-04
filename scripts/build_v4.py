@@ -1,6 +1,6 @@
 """Build the three-way workflow adapted from the user-supplied reference.
 Reference: https://www.icloud.com/shortcuts/48c45bf28b50473f82c818d5977d1a14
-Requires macOS signing separately; the Live branch needs Live Shortcuts on iPhone.
+Requires macOS signing separately; the Live branch needs JustLive for parsing and GIF Factory for saving.
 """
 import copy
 import plistlib
@@ -50,9 +50,9 @@ def split(value): return add('text.split',text=value,WFTextSeparator='New Lines'
 def choose(value, prompt): return add('choosefromlist',WFInput=value,WFChooseFromListActionPrompt=prompt,WFChooseFromListActionSelectMultiple=True,WFChooseFromListActionSelectAll=True)
 def url_https(value): return add('text.replace',WFInput=text(value),WFReplaceTextFind='http://',WFReplaceTextReplace='https://',WFReplaceTextRegularExpression=False)
 
-add('comment', WFCommentActionText='V4：参考用户提供的“空什么格 / 小红书下载器”指令。先分流 Live / 图片 / 视频，再解析、选择和保存。沿用其 qsy.jiejing.fun / a.jiejing.fun 服务与实况捷径动作，受作者服务及 App 额度限制。Live 传入独立封面和视频地址，不再使用 Actions。没有在 iPhone 验证保存，不承诺所有动态源无水印。')
+add('comment', WFCommentActionText='V4.1：参考用户提供的“空什么格 / 小红书下载器”指令。先分流 Live / 图片 / 视频，再解析、选择和保存。沿用其 qsy.jiejing.fun / a.jiejing.fun 服务，解析受作者服务限制。Live 保存参考小红书助手pro v4.7 的动图工厂文件动作，传入独立封面和视频文件。Live 解析仍需实况捷径。没有在 iPhone 验证保存，不承诺所有动态源无水印。')
 u=add('gettext',WFTextActionText=''); add('setvariable',WFInput=out(u),WFVariableName='授权码')
-add('comment',WFCommentActionText='上方文本留空使用参考服务的免费额度；已有作者授权码可填入。Live 需要安装“实况捷径”App，正常使用其免费额度/会员，不绕过限制。')
+add('comment',WFCommentActionText='上方文本留空使用参考服务的免费额度；已有作者授权码可填入。Live 解析需要“实况捷径”App，Live 保存需要“动图工厂”App；正常使用服务额度，不绕过限制。')
 links=add('detect.link',WFInput=text({'Value':{'Type':'ExtensionInput'},'WFSerializationType':'WFTextTokenAttachment'}))
 require(out(links),'请复制小红书笔记分享链接，或从分享表单运行。')
 u=first(out(links)); add('setvariable',WFInput=out(u),WFVariableName='笔记链接')
@@ -63,7 +63,7 @@ for mode,title in [(1,'Live 实况图'),(2,'图片'),(3,'视频')]:
     add('choosefrommenu',WFMenuItemTitle=title,WFControlFlowMode=1,GroupingIdentifier=mg)
     n=add('number',WFNumberActionNumber=str(mode));add('setvariable',WFInput=out(n),WFVariableName='保存类型')
     if mode==1:
-        add('alert',WFAlertActionTitle='Live 实况图',WFAlertActionMessage='需要先安装并打开“实况捷径”App。此分支会把独立封面与动态视频配对并由 App 保存到相册。',WFAlertActionCancelButtonShown=True)
+        add('alert',WFAlertActionTitle='Live 实况图',WFAlertActionMessage='解析需要“实况捷径”，保存需要“动图工厂”。此分支下载独立封面与对应视频文件，再配对存入相册。',WFAlertActionCancelButtonShown=True)
         cred=app('EncryptExtension')
         endpoint=key(var('服务配置'),'livexhs')
         resp=add('downloadurl',WFURL=text(out(endpoint)),WFHTTPMethod='POST',WFHTTPBodyType='JSON',WFJSONValues=dictionary_fields({'kl':var('授权码'),'url':var('笔记链接'),'payload':out(cred)}))
@@ -93,35 +93,35 @@ pairs=key(var('解析结果'),'body.lives');require(out(pairs),'解析结果没�
 pairs=split(out(pairs));add('setvariable',WFInput=out(pairs),WFVariableName='实况配对列表')
 g=loop(out(pairs));pair=add('detect.dictionary',WFInput=var('Repeat Item'));pic=key(out(pair),'pic');require(out(pic),'某个实况项目没有封面地址，已停止。')
 pic=url_https(out(pic));p=add('downloadurl',WFURL=text(out(pic)),WFHTTPMethod='GET')
-p=add('setitemname',WFInput=out(p),WFName=text(var('Repeat Index'),'.jpg'),WFDontIncludeFileExtension=False)
+p=add('image.convert',WFInput=out(p),WFImageFormat='PNG')
+p=add('setitemname',WFInput=out(p),WFName=text(var('Repeat Index'),'.png'),WFDontIncludeFileExtension=False)
 thumbs=loop_end(g);require(out(thumbs),'没有下载到实况封面。')
 selected=choose(out(thumbs),'选择要保存的 Live 实况图（可多选）');require(out(selected),'没有选择实况图，本次未保存。')
 add('previewdocument',WFInput=out(selected))
-g=loop(out(selected));name=add('getitemname',WFInput=var('Repeat Item'))
+g=loop(out(selected));add('setvariable',WFInput=var('Repeat Item'),WFVariableName='Live封面文件');name=add('getitemname',WFInput=var('Repeat Item'))
 idx=add('text.match',text=text(out(name)),WFMatchTextPattern=r'^\d+',WFMatchTextCaseSensitive=True)
 pair=add('getitemfromlist',WFInput=var('实况配对列表'),WFItemSpecifier='Item At Index',WFItemIndex=text(out(idx)))
 pair=add('detect.dictionary',WFInput=out(pair));pic=key(out(pair),'pic');video=key(out(pair),'video')
 require(out(pic),'所选实况没有封面地址。');require(out(video),'所选实况没有动态视频地址。')
-# Exact action and parameter names from the user's reference, with original cover preserved.
-r=app('LiveExtension',imageURL=text(out(pic)),videoURL=text(out(video)),albumName='')
-status=add('detect.number',WFInput=out(r));require(out(status),'实况捷径没有返回保存状态，请检查 App 与照片权限。')
-status=first(out(status));limited=cond(out(status),4,1)
-error('实况捷径返回保存受限；可能已达到 App 额度。已保存的项目保留，请在 App 中检查额度和照片权限。');end(limited)
+# Download the paired video; GIF Factory accepts files, not URL strings.
+video=url_https(out(video));video=add('downloadurl',WFURL=text(out(video)),WFHTTPMethod='GET')
+require(out(video),'没有下载到所选 Live 的动态视频文件。')
+video=add('setitemname',WFInput=out(video),WFName='xhs-live-video.mp4',WFDontIncludeFileExtension=False)
+add('setvariable',WFInput=out(video),WFVariableName='Live视频文件')
+A.append({'WFWorkflowActionIdentifier':'com.liudh.giffactory.SaveLivePhotoFromFilesIntent','WFWorkflowActionParameters':{'UUID':uid(),'AppIntentDescriptor':{'TeamIdentifier':'Q36V269ZQ9','BundleIdentifier':'com.liudh.giffactory','Name':'动图工厂','AppIntentIdentifier':'SaveLivePhotoFromFilesIntent'},'imageFile':var('Live封面文件'),'videoFile':var('Live视频文件')}})
+# The intent saves directly; its return is not a JustLive numeric quota status.
+add('nothing')
 loop_end(g)
 add('conditional',WFControlFlowMode=1,GroupingIdentifier=liveg)
 urls=key(var('解析结果'),'body.urls');require(out(urls),'解析结果没有图片或视频下载地址。');urls=split(out(urls));add('setvariable',WFInput=out(urls),WFVariableName='媒体地址列表')
 mode=add('getvariable',WFVariable=var('保存类型'));imageg=cond(out(mode),4,2)
-# Preview and select first, then use the reference's image extraction/save action.
+# Decode the actual image and save PNG files, following the new reference.
 g=loop(out(urls));address=url_https(var('Repeat Item'));media=add('downloadurl',WFURL=text(out(address)),WFHTTPMethod='GET')
-media=add('setitemname',WFInput=out(media),WFName=text(var('Repeat Index'),'.jpg'),WFDontIncludeFileExtension=False)
+media=add('image.convert',WFInput=out(media),WFImageFormat='PNG')
+media=add('setitemname',WFInput=out(media),WFName=text(var('Repeat Index'),'.png'),WFDontIncludeFileExtension=False)
 previews=loop_end(g);require(out(previews),'没有下载到图片预览。')
 selected=choose(out(previews),'选择要保存到相册的图片（可多选）');require(out(selected),'没有选择图片，本次未保存。');add('previewdocument',WFInput=out(selected))
-g=loop(out(selected));name=add('getitemname',WFInput=var('Repeat Item'))
-idx=add('text.match',text=text(out(name)),WFMatchTextPattern=r'^\d+',WFMatchTextCaseSensitive=True)
-address=add('getitemfromlist',WFInput=var('媒体地址列表'),WFItemSpecifier='Item At Index',WFItemIndex=text(out(idx)))
-app('ResourceExtractionExtension',mediaURL=text(out(address)))
-# This action saves directly; do not feed its empty return value to Photos.
-add('nothing');loop_end(g)
+add('savetocameraroll',WFInput=out(selected))
 add('conditional',WFControlFlowMode=1,GroupingIdentifier=imageg)
 g=loop(out(urls));address=url_https(var('Repeat Item'));media=add('downloadurl',WFURL=text(out(address)),WFHTTPMethod='GET')
 # Exact file naming strategy from the reference before Photos import.
