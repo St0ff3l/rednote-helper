@@ -7,9 +7,10 @@ def out(u):return {'Value':{'Type':'ActionOutput','OutputUUID':u,'OutputName':'�
 def action(k,u=None,**q):q['UUID']=u or str(uuid.uuid4()).upper();return {'WFWorkflowActionIdentifier':'is.workflow.actions.'+k,'WFWorkflowActionParameters':q}
 def literal(s,u=None):return action('gettext',u,WFTextActionText=s)
 import json
-for mode,label in [(1,'live'),(2,'image'),(3,'video')]:
+for mode,label in [(1,'live'),(2,'image'),(3,'video'),(2,'service-error')]:
  a=copy.deepcopy(p['WFWorkflowActions']);start=next(i for i,x in enumerate(a) if x['WFWorkflowActionIdentifier']=='is.workflow.actions.detect.dictionary' and x['WFWorkflowActionParameters'].get('WFInput',{}).get('Value',{}).get('VariableName')=='解析响应');a=a[start:]
  payload={'code':0,'body':{'urls':'https://example.test/one\nhttps://example.test/two','lives':json.dumps({'pic':'https://example.test/cover-1','video':'https://example.test/video-1'})+'\n'+json.dumps({'pic':'https://example.test/cover-2','video':'https://example.test/video-2'})}}
+ if label=='service-error':payload.update(code=1,msg='fixture service unavailable')
  result=[]
  for name,value in [('保存类型',str(mode)),('解析响应',json.dumps(payload)),('服务配置',json.dumps({'Rename':'视频.mp4'}))]:
   l=action('number',WFNumberActionNumber=value) if name=='保存类型' else literal(value);result.append(l)
@@ -35,7 +36,13 @@ for mode,label in [(1,'live'),(2,'image'),(3,'video')]:
    result.append(action('gettext',WFTextActionText=q['imageURL']));result.append(action('gettext',WFTextActionText=q['videoURL']))
    x=action('number',u,WFNumberActionNumber='0')
   elif k.endswith('ResourceExtractionExtension'):x=action('gettext',u,WFTextActionText=q['mediaURL'])
-  elif k=='is.workflow.actions.savetocameraroll':x=action('getitemtype',u,WFInput=q['WFInput'])
+  elif k=='is.workflow.actions.savetocameraroll':
+   result.append(literal('CAPTURE_PHOTOS_SAVE'))
+   x=action('getitemtype',u,WFInput=q['WFInput'])
+  elif k=='is.workflow.actions.alert':x=action('gettext',u,WFTextActionText=q['WFAlertActionMessage'])
+  elif k=='is.workflow.actions.notification':
+   result.append(literal('CAPTURE_SUCCESS_NOTIFICATION'))
+   x=action('gettext',u,WFTextActionText=q['WFNotificationActionBody'])
   result.append(x)
  t=copy.deepcopy(p);t['WFWorkflowActions']=result;t['WFWorkflowHasShortcutInputVariables']=False;t['WFWorkflowTypes']=[]
  plistlib.dump(t,open(ROOT/'work'/('test-v4-'+label+'.shortcut'),'wb'))
@@ -43,11 +50,19 @@ print('Fixtures: service reply + local files; save calls captured, not executed'
 
 if __name__ == '__main__':
  import subprocess
- for label in ('live','image','video'):
+ for label in ('live','image','video','service-error'):
   run=subprocess.run(['swift','work/run-native.swift',f'work/test-v4-{label}.shortcut'],cwd=ROOT,capture_output=True,text=True)
   log=run.stdout+run.stderr
   (ROOT/'work'/f'v4-{label}.log').write_text(log)
   assert run.returncode == 0 and 'DONE OK false' in log, (label,log[-1500:])
+  if label=='service-error':
+   assert 'fixture service unavailable' in log and 'CAPTURE_SUCCESS_NOTIFICATION' not in log and 'CAPTURE_PHOTOS_SAVE' not in log
+   print('service-error fixture passed; no save or success notification')
+   continue
+  assert log.count(': CAPTURE_SUCCESS_NOTIFICATION') == 1, log[-2000:]
+  marker = 'CAPTURE_LIVE_FILES' if label=='live' else 'CAPTURE_PHOTOS_SAVE'
+  assert log.index(marker) < log.index('CAPTURE_SUCCESS_NOTIFICATION')
+  assert r'\U5df2\U4fdd\U5b58 1' in log, log[-2000:]
   if label=='live':
    assert ': https://example.test/cover-2' in log and ': https://example.test/video-2' in log
    assert 'CAPTURE_LIVE_FILES' in log and ': 2\"' in log and ': Media' in log
