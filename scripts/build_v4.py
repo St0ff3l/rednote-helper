@@ -92,6 +92,10 @@ for mode,title in [(1,'📸 Live 实况图'),(2,'🖼️ 图片'),(3,'🎬 视�
         pairs=add('getvariable',WFVariable=var('本地Live配对JSON'));require(out(pairs),'📸 这条笔记没有找到可用的 Live 图。')
         pairs=add('text.combine',text=out(pairs),WFTextSeparator='New Lines')
         pairs=add('text.replace',WFInput=text(out(pairs)),WFReplaceTextFind='\n',WFReplaceTextReplace=r'\n',WFReplaceTextRegularExpression=False)
+        # The pairs are JSON objects embedded in the response's JSON string.
+        # Escape their quotes after preserving the line separators, or the
+        # response dictionary cannot be parsed and its `code` key disappears.
+        pairs=add('text.replace',WFInput=text(out(pairs)),WFReplaceTextFind='"',WFReplaceTextReplace=r'\"',WFReplaceTextRegularExpression=False)
         resp=add('gettext',WFTextActionText=text('{"code":0,"body":{"lives":"',out(pairs),'"}}'))
     elif mode==2:
         # Read this note's image list locally; do not save a styled preview URL.

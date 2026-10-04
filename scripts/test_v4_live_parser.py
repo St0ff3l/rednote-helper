@@ -23,6 +23,13 @@ def output(uuid_value):
     }
 
 
+def variable(name):
+    return {
+        "Value": {"Type": "Variable", "VariableName": name},
+        "WFSerializationType": "WFTextTokenAttachment",
+    }
+
+
 def text_token(uuid_value, prefix="", suffix=""):
     offset = len(prefix.encode("utf-16-le")) // 2
     return {
@@ -102,6 +109,61 @@ for sample_name, expected_count in SAMPLES:
     report = action("gettext", WFTextActionText=text_token(count_pairs["WFWorkflowActionParameters"]["UUID"], "V46_PAIR_MATCHES="))
     block[pair_variable_index + 1:pair_variable_index + 1] = [match_pairs, count_pairs, report]
 
+    response_var = action("getvariable", WFVariable=variable("解析响应"))
+    response_dictionary = action("detect.dictionary", WFInput=output(response_var["WFWorkflowActionParameters"]["UUID"]))
+    response_code = action(
+        "getvalueforkey",
+        WFInput=output(response_dictionary["WFWorkflowActionParameters"]["UUID"]),
+        WFDictionaryKey="code",
+        WFGetDictionaryValueType="Value",
+    )
+    match_code = action(
+        "text.match",
+        text=text_token(response_code["WFWorkflowActionParameters"]["UUID"]),
+        WFMatchTextPattern=r"^0$",
+        WFMatchTextCaseSensitive=True,
+    )
+    count_code = action("count", Input=output(match_code["WFWorkflowActionParameters"]["UUID"]), WFCountType="Items")
+    report_code = action("gettext", WFTextActionText=text_token(count_code["WFWorkflowActionParameters"]["UUID"], "V46_CODE_MATCHES="))
+    response_body = action(
+        "getvalueforkey",
+        WFInput=output(response_dictionary["WFWorkflowActionParameters"]["UUID"]),
+        WFDictionaryKey="body",
+        WFGetDictionaryValueType="Value",
+    )
+    response_lives = action(
+        "getvalueforkey",
+        WFInput=output(response_body["WFWorkflowActionParameters"]["UUID"]),
+        WFDictionaryKey="lives",
+        WFGetDictionaryValueType="Value",
+    )
+    split_lives = action("text.split", text=output(response_lives["WFWorkflowActionParameters"]["UUID"]), WFTextSeparator="New Lines")
+    match_wrapped_pairs = action(
+        "text.match",
+        text=text_token(split_lives["WFWorkflowActionParameters"]["UUID"]),
+        WFMatchTextPattern=exact_pair_pattern,
+        WFMatchTextCaseSensitive=True,
+    )
+    count_wrapped_pairs = action("count", Input=output(match_wrapped_pairs["WFWorkflowActionParameters"]["UUID"]), WFCountType="Items")
+    report_wrapped_pairs = action(
+        "gettext",
+        WFTextActionText=text_token(count_wrapped_pairs["WFWorkflowActionParameters"]["UUID"], "V46_WRAPPED_PAIR_MATCHES="),
+    )
+    block.extend([
+        response_var,
+        response_dictionary,
+        response_code,
+        match_code,
+        count_code,
+        report_code,
+        response_body,
+        response_lives,
+        split_lives,
+        match_wrapped_pairs,
+        count_wrapped_pairs,
+        report_wrapped_pairs,
+    ])
+
     fixture = copy.deepcopy(document)
     fixture["WFWorkflowActions"] = block
     fixture["WFWorkflowTypes"] = []
@@ -119,7 +181,11 @@ for sample_name, expected_count in SAMPLES:
     log = run.stdout + run.stderr
     (ROOT / "work" / f"test-v4-live-{expected_count}.log").write_text(log)
     expected_report = f"V46_PAIR_MATCHES={expected_count}"
+    expected_code_report = "V46_CODE_MATCHES=1"
+    expected_wrapped_report = f"V46_WRAPPED_PAIR_MATCHES={expected_count}"
     assert run.returncode == 0 and "DONE OK false" in log, (sample_name, log[-2000:])
     assert expected_report in log, (sample_name, expected_report, log[-2500:])
+    assert expected_code_report in log, (sample_name, expected_code_report, log[-3500:])
+    assert expected_wrapped_report in log, (sample_name, expected_wrapped_report, log[-3500:])
     assert "ACTION is.workflow.actions.alert Error" not in log, (sample_name, log[-1500:])
-    print(f"{sample_name}: all {expected_count} exact cover/video pairs matched")
+    print(f"{sample_name}: valid response code and all {expected_count} wrapped cover/video pairs matched")
