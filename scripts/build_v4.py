@@ -70,6 +70,16 @@ for mode,title in [(1,'📸 Live 实况图'),(2,'🖼️ 图片'),(3,'🎬 视�
     n=add('number',WFNumberActionNumber=str(mode));add('setvariable',WFInput=out(n),WFVariableName='保存类型')
     if mode==1:
         add('comment',WFCommentActionText='Live 数据在本地从笔记移动网页提取；原图和动态视频仍从小红书 CDN 下载。保存动作只使用动图工厂。')
+        # Shortcuts on iOS cannot reliably query whether another app is installed.
+        # Ask on each Live run, and stop after opening the official App Store page.
+        live_setup=uid()
+        add('choosefrommenu',WFMenuPrompt='🧰 Live 保存需要动图工厂',WFMenuItems=['✅ 已安装，继续','📲 未安装，去 App Store 下载'],WFControlFlowMode=0,GroupingIdentifier=live_setup)
+        add('choosefrommenu',WFMenuItemTitle='✅ 已安装，继续',WFControlFlowMode=1,GroupingIdentifier=live_setup)
+        add('nothing')
+        add('choosefrommenu',WFMenuItemTitle='📲 未安装，去 App Store 下载',WFControlFlowMode=1,GroupingIdentifier=live_setup)
+        add('openurl',WFURL=text('https://apps.apple.com/us/app/id6762482512?l=zh-Hans-CN'))
+        add('exit')
+        add('choosefrommenu',WFControlFlowMode=2,GroupingIdentifier=live_setup)
         headers=dictionary_fields({'User-Agent':'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Version/18.0 Mobile/15E148 Safari/604.1'})
         page=add('downloadurl',WFURL=text(var('笔记链接')),WFHTTPMethod='GET',WFHTTPHeaders=headers)
         page=add('gethtmlfromrichtext',WFInput=out(page),WFMakeFullDocument=False)
