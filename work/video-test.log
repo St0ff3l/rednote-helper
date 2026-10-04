@@ -1,0 +1,111 @@
+ACTION is.workflow.actions.gettext OK
+RESULT <WFContentCollection: 0x7c6d007540>: (
+    "<WFStringContentItem: 0x7c699882d0>: <html><script>window.__INITIAL_STATE__={\"global\": {\"appSettings\": {\"fakeModalPercent\": 0.02, \"fakeMo"
+)
+ACTION is.workflow.actions.getrichtextfromhtml OK
+RESULT <WFContentCollection: 0x7c6d007a60>: (
+    "<WFRichTextContentItem: 0x7c69949680>: <html><script>window.__INITIAL_STATE__={\"global\": {\"appSettings\": {\"fakeModalPercent\": 0.02, \"fakeMo"
+)
+ACTION is.workflow.actions.gethtmlfromrichtext OK
+RESULT <WFContentCollection: 0x7c6cb02aa0>: (
+    "<WFStringContentItem: 0x7c6a1808c0>: <html><script>window.__INITIAL_STATE__={\"global\": {\"appSettings\": {\"fakeModalPercent\": 0.02, \"fakeMo"
+)
+ACTION is.workflow.actions.text.match OK
+RESULT <WFContentCollection: 0x7c6cb02800>: (
+    "<WFCustomIntentOutputContentItem_7g83r3_TextMatch: 0x7c6a1a8240>: {\"global\": {\"appSettings\": {\"fakeModalPercent\": 0.02, \"fakeModalWhiteList\": [], \"noteShareCardWhiteL"
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x7c6d8a8ec0>: (
+    "<WFNumberContentItem: 0x7c69949a00>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7c6cb02e60>: (
+    "<WFNumberContentItem: 0x7c69949a00>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7c6cb02e60>: (
+    "<WFNumberContentItem: 0x7c69949a00>: 1"
+)
+ACTION is.workflow.actions.getitemfromlist OK
+RESULT <WFContentCollection: 0x7c6d8a8500>: (
+    "<WFCustomIntentOutputContentItem_7g83r3_TextMatch: 0x7c6a1a8240>: {\"global\": {\"appSettings\": {\"fakeModalPercent\": 0.02, \"fakeModalWhiteList\": [], \"noteShareCardWhiteL"
+)
+ACTION is.workflow.actions.text.replace OK
+RESULT <WFContentCollection: 0x7c6d8a8d00>: (
+    "<WFStringContentItem: 0x7c6998a210>: {\"global\": {\"appSettings\": {\"fakeModalPercent\": 0.02, \"fakeModalWhiteList\": [], \"noteShareCardWhiteL"
+)
+ACTION is.workflow.actions.detect.dictionary OK
+RESULT <WFContentCollection: 0x7c6d8a9900>: (
+    "<WFDictionaryContentItem: 0x7c6994b800>: Dictionary"
+)
+ACTION is.workflow.actions.getvalueforkey OK
+RESULT <WFContentCollection: 0x7c6d8a9f80>: (
+    "<WFDictionaryContentItem: 0x7c6994b740>: Dictionary"
+)
+ACTION is.workflow.actions.nothing OK
+RESULT <WFContentCollection: 0x7c6cb039c0>: (
+)
+ACTION is.workflow.actions.setvariable OK
+RESULT <WFContentCollection: 0x7c6d8aa040>: (
+)
+ACTION is.workflow.actions.getvalueforkey OK
+RESULT <WFContentCollection: 0x7c6d8a9c40>: (
+    "<WFStringContentItem: 0x7c6998afd0>: video"
+)
+ACTION is.workflow.actions.text.match OK
+RESULT <WFContentCollection: 0x7c6cb03be0>: (
+    "<WFCustomIntentOutputContentItem_7g83r3_TextMatch: 0x7c699496c0>: video"
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x7c6d8aa4c0>: (
+    "<WFNumberContentItem: 0x7c6994b840>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7c6cb03dc0>: (
+    "<WFNumberContentItem: 0x7c6994b840>: 1"
+)
+ACTION is.workflow.actions.text.match OK
+RESULT <WFContentCollection: 0x7c6d8a9aa0>: (
+    "<WFCustomIntentOutputContentItem_7g83r3_TextMatch: 0x7c6994b780>: \"masterUrl\":\"https:\\/\\/sns-video.example.test\\/video.mp4\""
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x7c6d8aa680>: (
+    "<WFNumberContentItem: 0x7c6994b900>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7c6d8aacc0>: (
+    "<WFNumberContentItem: 0x7c6994b900>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7c6d8aacc0>: (
+    "<WFNumberContentItem: 0x7c6994b900>: 1"
+)
+ACTION is.workflow.actions.getitemfromlist OK
+RESULT <WFContentCollection: 0x7c6d007f20>: (
+    "<WFCustomIntentOutputContentItem_7g83r3_TextMatch: 0x7c6994b780>: \"masterUrl\":\"https:\\/\\/sns-video.example.test\\/video.mp4\""
+)
+ACTION is.workflow.actions.text.match.getgroup OK
+RESULT <WFContentCollection: 0x7c6cb60640>: (
+    "<WFStringContentItem: 0x7c6a181130>: https:\\/\\/sns-video.example.test\\/video.mp4"
+)
+ACTION is.workflow.actions.text.replace OK
+RESULT <WFContentCollection: 0x7c6d8aa480>: (
+    "<WFStringContentItem: 0x7c6998b1b0>: https://sns-video.example.test/video.mp4"
+)
+ACTION is.workflow.actions.appendvariable OK
+RESULT <WFContentCollection: 0x7c6d8aa7a0>: (
+    "<WFStringContentItem: 0x7c6998b1b0>: https://sns-video.example.test/video.mp4"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7c6cb601a0>: (
+    "<WFStringContentItem: 0x7c6998b1b0>: https://sns-video.example.test/video.mp4"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7c6cb601a0>: (
+    "<WFStringContentItem: 0x7c6998b1b0>: https://sns-video.example.test/video.mp4"
+)
+ACTION is.workflow.actions.getvariable OK
+RESULT <WFContentCollection: 0x7c6cb60680>: (
+    "<WFStringContentItem: 0x7c6998b1b0>: https://sns-video.example.test/video.mp4"
+)
+DONE OK false

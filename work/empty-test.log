@@ -1,0 +1,97 @@
+ACTION is.workflow.actions.gettext OK
+RESULT <WFContentCollection: 0x7bcb470160>: (
+    "<WFStringContentItem: 0x7bc89e4050>: <html><script>window.__INITIAL_STATE__={\"global\": {\"appSettings\": {\"fakeModalPercent\": 0.02, \"fakeMo"
+)
+ACTION is.workflow.actions.getrichtextfromhtml OK
+RESULT <WFContentCollection: 0x7bcb42e840>: (
+    "<WFRichTextContentItem: 0x7bc89a7b00>: <html><script>window.__INITIAL_STATE__={\"global\": {\"appSettings\": {\"fakeModalPercent\": 0.02, \"fakeMo"
+)
+ACTION is.workflow.actions.gethtmlfromrichtext OK
+RESULT <WFContentCollection: 0x7bcb470260>: (
+    "<WFStringContentItem: 0x7bc79b68a0>: <html><script>window.__INITIAL_STATE__={\"global\": {\"appSettings\": {\"fakeModalPercent\": 0.02, \"fakeMo"
+)
+ACTION is.workflow.actions.text.match OK
+RESULT <WFContentCollection: 0x7bcb42ed80>: (
+    "<WFCustomIntentOutputContentItem_7g83r3_TextMatch: 0x7bc8a10980>: {\"global\": {\"appSettings\": {\"fakeModalPercent\": 0.02, \"fakeModalWhiteList\": [], \"noteShareCardWhiteL"
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x7bcb470320>: (
+    "<WFNumberContentItem: 0x7bc796edc0>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7bcb470ae0>: (
+    "<WFNumberContentItem: 0x7bc796edc0>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7bcb470ae0>: (
+    "<WFNumberContentItem: 0x7bc796edc0>: 1"
+)
+ACTION is.workflow.actions.getitemfromlist OK
+RESULT <WFContentCollection: 0x7bcb470d00>: (
+    "<WFCustomIntentOutputContentItem_7g83r3_TextMatch: 0x7bc8a10980>: {\"global\": {\"appSettings\": {\"fakeModalPercent\": 0.02, \"fakeModalWhiteList\": [], \"noteShareCardWhiteL"
+)
+ACTION is.workflow.actions.text.replace OK
+RESULT <WFContentCollection: 0x7bcb470de0>: (
+    "<WFStringContentItem: 0x7bc79b7610>: {\"global\": {\"appSettings\": {\"fakeModalPercent\": 0.02, \"fakeModalWhiteList\": [], \"noteShareCardWhiteL"
+)
+ACTION is.workflow.actions.detect.dictionary OK
+RESULT <WFContentCollection: 0x7bcb42f620>: (
+    "<WFDictionaryContentItem: 0x7bc8a10c80>: Dictionary"
+)
+ACTION is.workflow.actions.getvalueforkey OK
+RESULT <WFContentCollection: 0x7bcb42fd00>: (
+    "<WFDictionaryContentItem: 0x7bc8a10c40>: Dictionary"
+)
+ACTION is.workflow.actions.nothing OK
+RESULT <WFContentCollection: 0x7bcb4710e0>: (
+)
+ACTION is.workflow.actions.setvariable OK
+RESULT <WFContentCollection: 0x7bcb42fdc0>: (
+)
+ACTION is.workflow.actions.getvalueforkey OK
+RESULT <WFContentCollection: 0x7bcb471880>: (
+    "<WFStringContentItem: 0x7bc79b7570>: normal"
+)
+ACTION is.workflow.actions.text.match OK
+RESULT <WFContentCollection: 0x7bcb41bbe0>: (
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x7bcb41b9e0>: (
+    "<WFNumberContentItem: 0x7bc8a10d40>: 0"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7bcb433ec0>: (
+    "<WFNumberContentItem: 0x7bc8a10d40>: 0"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7bcb433ec0>: (
+    "<WFNumberContentItem: 0x7bc8a10d40>: 0"
+)
+ACTION is.workflow.actions.getvalueforkey OK
+RESULT <WFContentCollection: 0x7bcb433b80>: (
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x7bcb471b00>: (
+    "<WFNumberContentItem: 0x7bc796ee00>: 0"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7bc9b4c0a0>: (
+    "<WFNumberContentItem: 0x7bc796ee00>: 0"
+)
+ACTION is.workflow.actions.alert Error Domain=WFUserInterfaceErrorDomain Code=0 "This action could not be run with the current user interface." UserInfo={WFActionIndex=33, ActionInput=<WFContentCollection: 0x7bc9b4c0a0>: (
+    "<WFNumberContentItem: 0x7bc796ee00>: 0"
+), ActionProcessedParameters={
+    WFAlertActionCancelButtonShown = 0;
+    WFAlertActionMessage = "\U8fd9\U4e2a\U7b14\U8bb0\U6ca1\U6709\U8fd4\U56de\U9759\U6001\U56fe\U7247\U6570\U636e\U3002";
+    WFAlertActionTitle = "\U6ca1\U6709\U53ef\U7528\U7684\U5a92\U4f53";
+}, NSLocalizedDescription=This action could not be run with the current user interface.}
+RESULT <WFContentCollection: 0x7bc9b4c400>: (
+    "<WFNumberContentItem: 0x7bc796ee00>: 0"
+)
+DONE Error Domain=WFUserInterfaceErrorDomain Code=0 "This action could not be run with the current user interface." UserInfo={WFActionIndex=33, ActionInput=<WFContentCollection: 0x7bc9b4c0a0>: (
+    "<WFNumberContentItem: 0x7bc796ee00>: 0"
+), ActionProcessedParameters={
+    WFAlertActionCancelButtonShown = 0;
+    WFAlertActionMessage = "\U8fd9\U4e2a\U7b14\U8bb0\U6ca1\U6709\U8fd4\U56de\U9759\U6001\U56fe\U7247\U6570\U636e\U3002";
+    WFAlertActionTitle = "\U6ca1\U6709\U53ef\U7528\U7684\U5a92\U4f53";
+}, NSLocalizedDescription=This action could not be run with the current user interface.} false

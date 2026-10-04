@@ -1,0 +1,174 @@
+{
+  "addvariable" : {
+    "localizedName" : "Unknown Action",
+    "serializedParameters" : {
+
+    }
+  },
+  "choosefromlist" : {
+    "inputParameterKey" : "WFInput",
+    "localizedName" : "Choose from List",
+    "params" : [
+      {
+        "Class" : "WFVariablePickerParameter",
+        "Key" : "WFInput",
+        "Label" : "<_NSStringLocalizationResource: 0x795a9cd3d0>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"List (WFInput)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"List\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/ActionKit.framework\/, _sandboxExtensionToken: nil)))"
+      },
+      {
+        "Class" : "WFTextInputParameter",
+        "DefaultValue" : "",
+        "Key" : "WFChooseFromListActionPrompt",
+        "Label" : "<_NSStringLocalizationResource: 0x795a9cd440>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Prompt (WFChooseFromListActionPrompt)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Prompt\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/ActionKit.framework\/, _sandboxExtensionToken: nil)))"
+      },
+      {
+        "Class" : "WFSwitchParameter",
+        "DefaultValue" : false,
+        "Key" : "WFChooseFromListActionSelectMultiple",
+        "Label" : "<_NSStringLocalizationResource: 0x795a9cd4b0>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Select Multiple (WFChooseFromListActionSelectMultiple)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Select Multiple\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/ActionKit.framework\/, _sandboxExtensionToken: nil)))"
+      },
+      {
+        "Class" : "WFSwitchParameter",
+        "DefaultValue" : false,
+        "Key" : "WFChooseFromListActionSelectAll",
+        "Label" : "<_NSStringLocalizationResource: 0x795a9cd500>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Select All Initially (WFChooseFromListActionSelectAll)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Select All Initially\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/ActionKit.framework\/, _sandboxExtensionToken: nil)))"
+      }
+    ],
+    "serializedParameters" : {
+
+    }
+  },
+  "conditional" : {
+    "inputParameterKey" : "WFConditions",
+    "localizedName" : "If",
+    "params" : [
+      {
+        "Class" : "WFTableTemplateParameter",
+        "Key" : "WFConditions"
+      }
+    ],
+    "serializedParameters" : {
+      "GroupingIdentifier" : "B803A8BD-CD57-407B-9F77-C0F1E9068587",
+      "WFConditions" : {
+        "Value" : {
+          "WFActionParameterFilterPrefix" : 0,
+          "WFActionParameterFilterTemplates" : [
+
+          ],
+          "WFContentPredicateBoundedDate" : false
+        },
+        "WFSerializationType" : "WFContentPredicateTableTemplate"
+      },
+      "WFControlFlowMode" : 0
+    }
+  },
+  "getfiletype" : {
+    "localizedName" : "Unknown Action",
+    "serializedParameters" : {
+
+    }
+  },
+  "gethtmlfrominput" : {
+    "localizedName" : "Unknown Action",
+    "serializedParameters" : {
+
+    }
+  },
+  "gethtmlfromrichtext" : {
+    "inputParameterKey" : "WFInput",
+    "localizedName" : "Make HTML from Rich Text",
+    "params" : [
+      {
+        "Class" : "WFSwitchParameter",
+        "Key" : "WFMakeFullDocument",
+        "Label" : "<_NSStringLocalizationResource: 0x795a9cccb0>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Make Full Document (WFMakeFullDocument)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Make Full Document\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))"
+      },
+      {
+        "Class" : "WFVariablePickerParameter",
+        "Key" : "WFInput",
+        "Label" : "<_NSStringLocalizationResource: 0x795a9ccce0>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Rich Text (WFInput)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Rich Text\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))"
+      }
+    ],
+    "serializedParameters" : {
+
+    }
+  },
+  "getimagesfrominput" : {
+    "localizedName" : "Unknown Action",
+    "serializedParameters" : {
+
+    }
+  },
+  "getrichtextfromhtml" : {
+    "inputParameterKey" : "WFHTML",
+    "localizedName" : "Make Rich Text from HTML",
+    "params" : [
+      {
+        "Class" : "WFVariablePickerParameter",
+        "Key" : "WFHTML",
+        "Label" : "<_NSStringLocalizationResource: 0x795a9cd2c0>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"HTML (WFHTML)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"HTML\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))"
+      }
+    ],
+    "serializedParameters" : {
+
+    }
+  },
+  "getvariable" : {
+    "localizedName" : "Get Variable",
+    "params" : [
+      {
+        "Class" : "WFVariablePickerParameter",
+        "Key" : "WFVariable",
+        "Label" : "<_NSStringLocalizationResource: 0x795a9cda30>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Variable (WFVariable)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Variable\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))"
+      }
+    ],
+    "serializedParameters" : {
+
+    }
+  },
+  "quicklook" : {
+    "localizedName" : "Unknown Action",
+    "serializedParameters" : {
+
+    }
+  },
+  "repeat.each" : {
+    "inputParameterKey" : "WFInput",
+    "localizedName" : "Repeat with Each",
+    "params" : [
+      {
+        "Class" : "WFVariablePickerParameter",
+        "Key" : "WFInput",
+        "Label" : "<_NSStringLocalizationResource: 0x795a9cd920>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Items (WFInput)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Items\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))"
+      }
+    ],
+    "serializedParameters" : {
+      "GroupingIdentifier" : "3B81C2BB-F52E-4196-B289-A71F779E3711",
+      "WFControlFlowMode" : 0
+    }
+  },
+  "savetocameraroll" : {
+    "inputParameterKey" : "WFInput",
+    "localizedName" : "Save to Photos",
+    "params" : [
+      {
+        "Class" : "WFPhotoAlbumPickerParameter",
+        "Key" : "WFCameraRollSelectedGroup",
+        "Label" : "<_NSStringLocalizationResource: 0x795a9cdba0>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Album (WFCameraRollSelectedGroup)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Album\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))"
+      },
+      {
+        "Class" : "WFVariablePickerParameter",
+        "Key" : "WFInput",
+        "Label" : "<_NSStringLocalizationResource: 0x795a9cdbf0>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Input (WFInput)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Input\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))"
+      }
+    ],
+    "serializedParameters" : {
+
+    }
+  },
+  "setname" : {
+    "localizedName" : "Unknown Action",
+    "serializedParameters" : {
+
+    }
+  }
+}

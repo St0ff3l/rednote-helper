@@ -1,0 +1,95 @@
+ACTION is.workflow.actions.gettext OK
+RESULT <WFContentCollection: 0x771130bc00>: (
+    "<WFStringContentItem: 0x770d4ab2a0>: <!doctype html><html><head><script formula-runtime >function e(e){for(var r=1;r<arguments.length;r++"
+)
+ACTION is.workflow.actions.getrichtextfromhtml OK
+RESULT <WFContentCollection: 0x771130b9e0>: (
+    "<WFRichTextContentItem: 0x770d4d0e00>: <!doctype html><html><head><script formula-runtime >function e(e){for(var r=1;r<arguments.length;r++"
+)
+ACTION is.workflow.actions.gethtmlfromrichtext OK
+RESULT <WFContentCollection: 0x7711327b60>: (
+    "<WFStringContentItem: 0x770d4ab3e0>: <!doctype html><html><head><script formula-runtime >function e(e){for(var r=1;r<arguments.length;r++"
+)
+ACTION is.workflow.actions.text.match OK
+RESULT <WFContentCollection: 0x7711370860>: (
+    "<WFCustomIntentOutputContentItem_7g83r3_TextMatch: 0x770eea7800>: {\"global\":{\"appSettings\":{\"fakeModalPercent\":0.02,\"fakeModalWhiteList\":[],\"noteShareCardWhiteList\":["
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x7711370880>: (
+    "<WFNumberContentItem: 0x770d4d0f00>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7711370a00>: (
+    "<WFNumberContentItem: 0x770d4d0f00>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7711370a00>: (
+    "<WFNumberContentItem: 0x770d4d0f00>: 1"
+)
+ACTION is.workflow.actions.getitemfromlist OK
+RESULT <WFContentCollection: 0x77113709a0>: (
+    "<WFCustomIntentOutputContentItem_7g83r3_TextMatch: 0x770eea7800>: {\"global\":{\"appSettings\":{\"fakeModalPercent\":0.02,\"fakeModalWhiteList\":[],\"noteShareCardWhiteList\":["
+)
+ACTION is.workflow.actions.text.replace OK
+RESULT <WFContentCollection: 0x7711371100>: (
+    "<WFStringContentItem: 0x770d5002d0>: {\"global\":{\"appSettings\":{\"fakeModalPercent\":0.02,\"fakeModalWhiteList\":[],\"noteShareCardWhiteList\":["
+)
+ACTION is.workflow.actions.detect.dictionary OK
+RESULT <WFContentCollection: 0x771148dba0>: (
+    "<WFDictionaryContentItem: 0x770eea6340>: Dictionary"
+)
+ACTION is.workflow.actions.getvalueforkey OK
+RESULT <WFContentCollection: 0x771148ea20>: (
+    "<WFDictionaryContentItem: 0x770eea6480>: Dictionary"
+)
+ACTION is.workflow.actions.nothing OK
+RESULT <WFContentCollection: 0x7711370cc0>: (
+)
+ACTION is.workflow.actions.setvariable OK
+RESULT <WFContentCollection: 0x771148e260>: (
+)
+ACTION is.workflow.actions.getvalueforkey OK
+RESULT <WFContentCollection: 0x771148eae0>: (
+    "<WFStringContentItem: 0x770eeb8be0>: video"
+)
+ACTION is.workflow.actions.text.match OK
+RESULT <WFContentCollection: 0x771148ee20>: (
+    "<WFCustomIntentOutputContentItem_7g83r3_TextMatch: 0x770eea7840>: video"
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x7711371fe0>: (
+    "<WFNumberContentItem: 0x770d4d1e00>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7711372340>: (
+    "<WFNumberContentItem: 0x770d4d1e00>: 1"
+)
+ACTION is.workflow.actions.getvalueforkey OK
+RESULT <WFContentCollection: 0x7711372560>: (
+    "<WFDictionaryContentItem: 0x770d4d1dc0>: Dictionary"
+)
+ACTION is.workflow.actions.getitemfromlist OK
+RESULT <WFContentCollection: 0x7711372180>: (
+    "<WFDictionaryContentItem: 0x770d4d1dc0>: Dictionary"
+)
+ACTION is.workflow.actions.getvalueforkey OK
+RESULT <WFContentCollection: 0x7711372760>: (
+    "<WFStringContentItem: 0x770d500500>: http://sns-video-v27.xhscdn.com/stream/1/110/259/01eac0fd564949de01037003a101de8383_259.mp4?sign=cfd"
+)
+ACTION is.workflow.actions.appendvariable OK
+RESULT <WFContentCollection: 0x7711372500>: (
+    "<WFStringContentItem: 0x770d500500>: http://sns-video-v27.xhscdn.com/stream/1/110/259/01eac0fd564949de01037003a101de8383_259.mp4?sign=cfd"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x77113720a0>: (
+    "<WFStringContentItem: 0x770d500500>: http://sns-video-v27.xhscdn.com/stream/1/110/259/01eac0fd564949de01037003a101de8383_259.mp4?sign=cfd"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x77113720a0>: (
+    "<WFStringContentItem: 0x770d500500>: http://sns-video-v27.xhscdn.com/stream/1/110/259/01eac0fd564949de01037003a101de8383_259.mp4?sign=cfd"
+)
+ACTION is.workflow.actions.getvariable OK
+RESULT <WFContentCollection: 0x771148eda0>: (
+    "<WFStringContentItem: 0x770d500500>: http://sns-video-v27.xhscdn.com/stream/1/110/259/01eac0fd564949de01037003a101de8383_259.mp4?sign=cfd"
+)
+DONE OK false

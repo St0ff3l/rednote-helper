@@ -1,0 +1,982 @@
+{
+  "source": "/Users/stoffel/Documents/Codex/2026-10-04/ni",
+  "destination": "/Users/stoffel/CodeFile/xhs-media-helper",
+  "thread_id": "01a104e8-3552-72b3-bfb2-654811823cf2",
+  "files": [
+    {
+      "path": "work/live-test.log",
+      "bytes": 8889,
+      "sha256": "7dd92d51d60bbab35777f7724f13e4171510f2a6dd1b4871999e8d652bb7aac3"
+    },
+    {
+      "path": "work/build-v3.py",
+      "bytes": 4128,
+      "sha256": "f142e03d16f2a3b8ec0a64cb80054af8b1b7a0b9271b06c2051dc1f2fe9acf99"
+    },
+    {
+      "path": "work/build-shortcut.py",
+      "bytes": 4961,
+      "sha256": "d6bdd1b48b26071f85180d4dbe1fbf06b242821547aa8b2d74e7c5755579355a"
+    },
+    {
+      "path": "work/actions-metadata.json",
+      "bytes": 920943,
+      "sha256": "f8a19dc41f13f3037302073469455982706f5c8c7e60d66dcfbc3af1d8e8ddad"
+    },
+    {
+      "path": "work/reference-cert.der",
+      "bytes": 778,
+      "sha256": "012846e081466ace35d163cb0a86d23b846005f42262728ed94778a6be5fdd07"
+    },
+    {
+      "path": "work/test-v2-native.shortcut",
+      "bytes": 208262,
+      "sha256": "ff2af5f45b90e2e7ba611fc84bb5ea11b367bf029e967dd80a73e2debdbb59df"
+    },
+    {
+      "path": "work/defs-media.swift",
+      "bytes": 1871,
+      "sha256": "1fa3dcfc0d791b1f805f85b98329832c6d0084e8d5e4ac6ade76933089271ce8"
+    },
+    {
+      "path": "work/test-v2-live.shortcut",
+      "bytes": 68746,
+      "sha256": "91edfc045c666fd464d8d9797bc8e868f3cb6f7e28bbf95bb4fe8056b2881364"
+    },
+    {
+      "path": "work/test-v2-empty.shortcut",
+      "bytes": 68191,
+      "sha256": "e01792fd0e19828e0a06b58ad15e4c63a4d2222c6a3481ac3699543ae435863a"
+    },
+    {
+      "path": "work/build-v3-generated.py",
+      "bytes": 11595,
+      "sha256": "71e30118d9598a4a610bd19912a2bc2e6a3e79621ffe7506487344bdf02d439a"
+    },
+    {
+      "path": "work/xhs-unsigned.shortcut",
+      "bytes": 4287,
+      "sha256": "d02cf9e1baef5cf9f371e987ffac567d51bae699726bc93a4da2d94251d7e7bb"
+    },
+    {
+      "path": "work/real-image.log",
+      "bytes": 10803,
+      "sha256": "a7e057a2119f6075e07a286de24fe54325669570f732d108816c91095e2dd0ba"
+    },
+    {
+      "path": "work/actions-gist.json",
+      "bytes": 67773,
+      "sha256": "8140fbaabf10c17d7ecd3848e2da7f06642b42918e99eb9578ff416d3946d218"
+    },
+    {
+      "path": "work/protocol.swift",
+      "bytes": 476,
+      "sha256": "d0254ebbd864b3a664a929143fbd60dbfccffce7a824abb51f9408abc1d58c42"
+    },
+    {
+      "path": "work/action-media.json",
+      "bytes": 8437,
+      "sha256": "96a177956315970fd6f7612b1112e2a8326db541f5f1cdd679a907b58b71f83f"
+    },
+    {
+      "path": "work/video-note.html",
+      "bytes": 152557,
+      "sha256": "07d749a8436324448548aef62068ede3e3fa12a2ed4d5e89b9ed1f708172d23f"
+    },
+    {
+      "path": "work/test-parse-signed.shortcut",
+      "bytes": 22942,
+      "sha256": "0f946c735a33ec3a893d1feb5e5922baf03fa85a7d44fa40ce80324aa737a46d"
+    },
+    {
+      "path": "work/test-v2-real-live.shortcut",
+      "bytes": 388058,
+      "sha256": "e952e2aee290549fc989f4384112ad788233964749be527e6a182bbdcae690e8"
+    },
+    {
+      "path": "work/live-sample.mp4",
+      "bytes": 432682,
+      "sha256": "529ec3ad01faf12befe8084814f7701808ec5cb7c8cf402c2ca10e49c9b6d0f7"
+    },
+    {
+      "path": "work/inspect-runtime.swift",
+      "bytes": 609,
+      "sha256": "c0624b23e9e79c6be5bf30fc2df0867ac9bf8afe9f9651e861acec21acca7f9a"
+    },
+    {
+      "path": "work/inspect-file.swift",
+      "bytes": 592,
+      "sha256": "f6b9644fd8cfd30c839ff373cf0afc0bf733468611fe9076d7646dc62c373ab3"
+    },
+    {
+      "path": "work/build-v2.py",
+      "bytes": 10811,
+      "sha256": "6ba9920f3968b12155e25586d4b5dc0cb186600425f4f90feea2dc6904e8c531"
+    },
+    {
+      "path": "work/definitions.swift",
+      "bytes": 1938,
+      "sha256": "8bcca63cc38b9f363cab16468c01d5a3991cd45117ab1645210e3cf909f15510"
+    },
+    {
+      "path": "work/xhs-note.html",
+      "bytes": 122148,
+      "sha256": "a3e46d08857a083167d41ed78925ab18c73bb9b922a78a4d43a214f1ae5022b5"
+    },
+    {
+      "path": "work/actions.js",
+      "bytes": 671,
+      "sha256": "a596097e49f6ecd66e7a3b95995966fa13719f63836fbc69d9aeb38e23a4510d"
+    },
+    {
+      "path": "work/test-loop.shortcut",
+      "bytes": 146362,
+      "sha256": "d1a01b59c67e43769e3340d173117864d7fa075c58facbea62a7b14cb8da6fe3"
+    },
+    {
+      "path": "work/real-v3-live.log",
+      "bytes": 30106,
+      "sha256": "4153e523beee2197124aec4151c0a2b449f0a5b4c81247764364510f2cb07aae"
+    },
+    {
+      "path": "work/real-video.log",
+      "bytes": 4456,
+      "sha256": "17e8fe6a63f5d97ce1d6f691c776db645b71e6a35eecb73e26f22fb5f762de5b"
+    },
+    {
+      "path": "work/xhs-reference.shortcut",
+      "bytes": 23460,
+      "sha256": "2793b50c94de16d89d36a88662a5893a0ff9b11a79038bd2e72c95b8154e2fb8"
+    },
+    {
+      "path": "work/validate.swift",
+      "bytes": 1217,
+      "sha256": "1593cb59f28ae67897bee0615084c409c0f42fbb42449129423fbee2567f06bd"
+    },
+    {
+      "path": "work/real-live.log",
+      "bytes": 31114,
+      "sha256": "590f95fbea33a57a1be34a2cbc456b8d763d61719eb65faa76677946a5e67e68"
+    },
+    {
+      "path": "work/defs-tools.swift",
+      "bytes": 1835,
+      "sha256": "461ea5cd1861008e2d1f87cec2f74df457724421c96c72dd7ae9a36571a0fb0f"
+    },
+    {
+      "path": "work/test-v3-real.py",
+      "bytes": 2520,
+      "sha256": "da46332a006bb1aae459bd922cdd9ae1920f38e7a6a3b62cd487f46256ef698a"
+    },
+    {
+      "path": "work/action-definitions.json",
+      "bytes": 26221,
+      "sha256": "ffa57ce700653afa1a6f432869850f59c64a224302e787d2d3457bedba4f63e7"
+    },
+    {
+      "path": "work/classes.swift",
+      "bytes": 523,
+      "sha256": "19aa6c1bc0a32b294709e00d5bcdce2b86819a7358c89f1da7f238be2f84b39f"
+    },
+    {
+      "path": "work/video-test.log",
+      "bytes": 4913,
+      "sha256": "41fdfc133164b7d4583bda66ab17e239eb8c8385296206d51eb760db13eb8abc"
+    },
+    {
+      "path": "work/video-state.json",
+      "bytes": 51963,
+      "sha256": "eff9f9b2824f56cb04d7e941db6228df9032fa151946576da7f36b47035d48d3"
+    },
+    {
+      "path": "work/live-state.json",
+      "bytes": 53298,
+      "sha256": "e2c4eb53f23f66c37cecd612294fa75b64308964c9f229e2bca770fbc96df167"
+    },
+    {
+      "path": "work/test-v2-real.py",
+      "bytes": 2513,
+      "sha256": "db2106c495d002225ac96d2d6da7c5a18a51f58ba4b8358b84b71b8e12e08440"
+    },
+    {
+      "path": "work/read-shortcut.swift",
+      "bytes": 976,
+      "sha256": "f3b98e261b948029f5c8db46d5334ed5c5cf3cc839b4a8a1c14617267b4d8598"
+    },
+    {
+      "path": "work/validate-v3.log",
+      "bytes": 22145,
+      "sha256": "e264c180920d138a136b04d366e0691aa36f5e4679ba79d8874113b275e1322b"
+    },
+    {
+      "path": "work/reference-pub.pem",
+      "bytes": 178,
+      "sha256": "8206c0f19e2f18527166bc5bdef32744dea0140b0490387b915e2309e3fb2f7e"
+    },
+    {
+      "path": "work/xhs-state.json",
+      "bytes": 28529,
+      "sha256": "a62d306aa2267994cbf2aa8869b9890d2084627f11870c9f0ec8d7294d1dbb0f"
+    },
+    {
+      "path": "work/image-1.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "work/test-v2-real-image.shortcut",
+      "bytes": 325195,
+      "sha256": "791ae8b611274227498f72eb0931cbd77705df003cf8a7d6cdc36dc4a8b44e7b"
+    },
+    {
+      "path": "work/inspect-param.swift",
+      "bytes": 543,
+      "sha256": "4b955c07fe842740f05e5842cef7d774006053fd0e94c3804be03b51d4f687dc"
+    },
+    {
+      "path": "work/defs2.swift",
+      "bytes": 2077,
+      "sha256": "207a644d02120f3704d62cbe4c3ab42e24d8e449dbd42cc436f1efaf51dfa983"
+    },
+    {
+      "path": "work/test-v3-real-image.shortcut",
+      "bytes": 341102,
+      "sha256": "d4193ab721f63431bd988914d9e5cc6ed8f27c4216130d4e67768b98a9ee308d"
+    },
+    {
+      "path": "work/test-v2-video.shortcut",
+      "bytes": 68984,
+      "sha256": "ae9ccbefd359eec056e567e5b491416c22389bfef80742bcbc3502d5f8020b18"
+    },
+    {
+      "path": "work/image-0.bin",
+      "bytes": 88257,
+      "sha256": "71efc8cb442d62ddfa53d74eba83ec87cf5dace19619feaeab5010220765fc9e"
+    },
+    {
+      "path": "work/image-2.bin",
+      "bytes": 1555015,
+      "sha256": "2d3101222e116ee49a59177c4ce296e553e2b923b85e21da3254602f78ccafb2"
+    },
+    {
+      "path": "work/inspect-def.swift",
+      "bytes": 540,
+      "sha256": "866d6658346356166c2925b88724738685d9c77476ce6ac0b64b2c31e451d4e7"
+    },
+    {
+      "path": "work/image-3.bin",
+      "bytes": 1555015,
+      "sha256": "2d3101222e116ee49a59177c4ce296e553e2b923b85e21da3254602f78ccafb2"
+    },
+    {
+      "path": "work/reference-pub.raw",
+      "bytes": 65,
+      "sha256": "f616de7864cc027f42782d8433a3b14d9eb41d3669f34395717c679ea9d8f8ec"
+    },
+    {
+      "path": "work/live-note.html",
+      "bytes": 178599,
+      "sha256": "6180bc827ac42600c31b2e848e8028bc01239b305a91986e7ab97220240d6c39"
+    },
+    {
+      "path": "work/test-native.shortcut",
+      "bytes": 144442,
+      "sha256": "4aea25f10f4e557aefdc7a992ec03ff5248d495065b3f33bf4cbe75018845a96"
+    },
+    {
+      "path": "work/defs-preview.swift",
+      "bytes": 1761,
+      "sha256": "b5a7029148b4e31dce4bfd6ca2d39626ef5fea9638cd70a13d85d98cf7ec96d6"
+    },
+    {
+      "path": "work/image-4.bin",
+      "bytes": 1555015,
+      "sha256": "2d3101222e116ee49a59177c4ce296e553e2b923b85e21da3254602f78ccafb2"
+    },
+    {
+      "path": "work/test-v2-real-video.shortcut",
+      "bytes": 354412,
+      "sha256": "1dfa4270fa123b74512e6e18edd57b18759a145bb07eeee3c0b3e45cea4e9ef2"
+    },
+    {
+      "path": "work/xhs-v3-signed.shortcut",
+      "bytes": 35146,
+      "sha256": "53e718ac24d6ae4e6682c707e8e7fb4afa279e09b34b55d2526f878095b035df"
+    },
+    {
+      "path": "work/test-v3-real-video.shortcut",
+      "bytes": 370319,
+      "sha256": "b6f9b388535ce9acb864f9c830bb3cfa440c78077790033b815616d91c41385e"
+    },
+    {
+      "path": "work/reference.plist",
+      "bytes": 3452,
+      "sha256": "00f684fcb619ab03fc0279d40c54cdd28d9f37ab3245fb40b2f681d39ec2d2df"
+    },
+    {
+      "path": "work/action-preview.json",
+      "bytes": 8036,
+      "sha256": "c4b3516afb18cfd4b646bf6fe3439a7b4f7ea1322c0eed7fc070003d83545064"
+    },
+    {
+      "path": "work/validate-v3.swift",
+      "bytes": 1220,
+      "sha256": "f09c9d72cb47feb25e12b6f1c327b1de6f7b3c691982b940f4ff56f27f34a5c6"
+    },
+    {
+      "path": "work/xhs-v3-unsigned.shortcut",
+      "bytes": 22895,
+      "sha256": "c4cc8ee7ed29393b938189bd3f68c960f83ced4bca822bbbd262e7bcfea8ca21"
+    },
+    {
+      "path": "work/ios-downloader.swift",
+      "bytes": 33426,
+      "sha256": "1f8cfed4c528d1afc391dcc9e1037842d9b95275243c2464e2cc56a7b24d36ae"
+    },
+    {
+      "path": "work/action-definitions2.json",
+      "bytes": 5,
+      "sha256": "8e1d794b49e35ea828279c6a8c95282bbb9a0787cf5c9385256c2cc9d17baeb7"
+    },
+    {
+      "path": "work/test-network.shortcut",
+      "bytes": 6620,
+      "sha256": "982f27d0a24c98f1aa6bcedc5761756ec280221b5e8891f9fe4332e052ece195"
+    },
+    {
+      "path": "work/run-native.swift",
+      "bytes": 2412,
+      "sha256": "0251bc3c583b33807fefad3cbb22e166e79fef4808a01be644239dd377b81c92"
+    },
+    {
+      "path": "work/live-frame.png",
+      "bytes": 735975,
+      "sha256": "6d4568f28063bfdd51b606d383809a19a20eb963a35c628d017cb4f6b349a7f5"
+    },
+    {
+      "path": "work/test-v3-real-live.shortcut",
+      "bytes": 403965,
+      "sha256": "dff51f675974cf642533239ab619bd503c5da6a47bfb2dcdec68752023b6bff0"
+    },
+    {
+      "path": "work/test-parse.shortcut",
+      "bytes": 2456,
+      "sha256": "2556f1adae8f09d3a6b2127fbaac152a20d39de249fb0d1bfe1a892bbe1d4d86"
+    },
+    {
+      "path": "work/action-tools.json",
+      "bytes": 14103,
+      "sha256": "f015cdf6bc37638a28e25e5eff4f4ceaa351908671b24f059a6a9333a3524a5e"
+    },
+    {
+      "path": "work/inspect-loop.swift",
+      "bytes": 657,
+      "sha256": "9cf4ba1278a047c1dc5e3bf8a9425c1eaef3084fcb8d4db5d0604b3256927d94"
+    },
+    {
+      "path": "work/Actions.zip",
+      "bytes": 17527853,
+      "sha256": "7004d50a0109ac40cb3bc983759dc962980c49e22eb6a16e4e5f6375a3fb008c"
+    },
+    {
+      "path": "work/inspect.swift",
+      "bytes": 647,
+      "sha256": "3cdedd18993c7c537d48ebae82f2aad557831256b0a3909b1301e2854b4ca1cd"
+    },
+    {
+      "path": "work/xhs-headers.txt",
+      "bytes": 1391,
+      "sha256": "93d4dd4d8faf36c354561477d63637845cadfc486f8d116edc16553f6042e82e"
+    },
+    {
+      "path": "work/actions-official.md",
+      "bytes": 59157,
+      "sha256": "465ffb4f08963ebea518bdbd365ddd0ec9ae2e881dacff870861521950730717"
+    },
+    {
+      "path": "work/defs3.swift",
+      "bytes": 1838,
+      "sha256": "fee436b5daeafd47930c686ebf4f791e1b8db0506231178552a07cb0d7a2bb3d"
+    },
+    {
+      "path": "work/xhs-v2-unsigned.shortcut",
+      "bytes": 17852,
+      "sha256": "cde48af46cf4ef1932dea668b66485be55ed6663797bd0e68622da9ddac7e8a6"
+    },
+    {
+      "path": "work/validate-v2.swift",
+      "bytes": 1220,
+      "sha256": "15a596dd12e108809fb5354579d308af35a694b24960fdd8795f4ffda710b128"
+    },
+    {
+      "path": "work/defs-preview-correct.swift",
+      "bytes": 1703,
+      "sha256": "f25c56b5670242e5fb09e320e7425cd9a581f74387ec72f55df4bf9d23d8d9aa"
+    },
+    {
+      "path": "work/test-html.shortcut",
+      "bytes": 144931,
+      "sha256": "07f0dbda44bc05ff86247e6f5d8c7fdb746d89d69cc602b9a0838bd3a10aee19"
+    },
+    {
+      "path": "work/action-definitions3.json",
+      "bytes": 11919,
+      "sha256": "a2f83c69f1a5e5320db18d8461c783a5e8f7b6ef35c405b75d0dde7b7f12b9fb"
+    },
+    {
+      "path": "work/empty-test.log",
+      "bytes": 4707,
+      "sha256": "187f3467a0c08ed29500a4049594956829c32af78faec08242d12d1cbdacb05b"
+    },
+    {
+      "path": "outputs/使用说明.md",
+      "bytes": 1465,
+      "sha256": "3ac71e20a5cc500c1ee31f59a71a01bdc4a05a45e5938a478c352ab09c9c9b3b"
+    },
+    {
+      "path": "outputs/V3实况版说明.md",
+      "bytes": 1797,
+      "sha256": "8d9718a90d515c59f170fccec729a3c46c518436d570f057929f001234b64b54"
+    },
+    {
+      "path": "outputs/小红书无水印选择保存-V2.shortcut",
+      "bytes": 32153,
+      "sha256": "ffe2f074e9e89c57ced5364a081fccb153c7c5e4b3989c882738152e9344d8d3"
+    },
+    {
+      "path": "outputs/小红书选择保存-V3-实况.shortcut",
+      "bytes": 35131,
+      "sha256": "9fba10251c5ba63ed5716fc1767cf801ef18e46c64ad2d7adb6db2a6ddc03a25"
+    },
+    {
+      "path": "outputs/小红书无水印原尺寸.shortcut",
+      "bytes": 24188,
+      "sha256": "ad69844319ce08f7e92d387d4c4e23448ee5280bb9b2762d5842a8730bfbdc0f"
+    },
+    {
+      "path": "outputs/补2张-原尺寸.jpg",
+      "bytes": 1555015,
+      "sha256": "2d3101222e116ee49a59177c4ce296e553e2b923b85e21da3254602f78ccafb2"
+    },
+    {
+      "path": "work/reference-decoded/Shortcut.wflow",
+      "bytes": 3354,
+      "sha256": "9c49c81da990ffc12b4babde8957e4cfa1f532b310a98f426e6661a92570f064"
+    },
+    {
+      "path": "work/import/小红书选择保存 V3 实况.shortcut",
+      "bytes": 35131,
+      "sha256": "9fba10251c5ba63ed5716fc1767cf801ef18e46c64ad2d7adb6db2a6ddc03a25"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/CodeResources",
+      "bytes": 1800,
+      "sha256": "09b14ff7e2f1f3e4af8060ab790ed54972f6bd73ad173da95bfbe44806e5818b"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/embedded.provisionprofile",
+      "bytes": 15760,
+      "sha256": "e23d0a5de60a19780c76a03209de2d378bb482a2b11b7141be084cd879484d0a"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Info.plist",
+      "bytes": 4805,
+      "sha256": "e5df7e378a57aaa4f756333170884a0e4fd9d0e45c7dcc6a3672ff9fae4a4e74"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/PkgInfo",
+      "bytes": 8,
+      "sha256": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/_CodeSignature/CodeResources",
+      "bytes": 5507,
+      "sha256": "4e77b7b7eab0c23f99a82b26e77d3d1c316c61af0f8e17231aefe184d1a3ea9a"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/MacOS/Actions",
+      "bytes": 14438512,
+      "sha256": "51251350e093b1e631e9ab42089f368f5072be6a7ea3efae64f52e0462fa15ab"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Resources/AppIcon.icns",
+      "bytes": 67551,
+      "sha256": "9d61d19ba78eefaf30c42a77b08981ef159553c65a67edefdeab295f00002b60"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Resources/Assets.car",
+      "bytes": 3146792,
+      "sha256": "0913001fcbca826d55555d2ee136b1a05efec056f6ab3843f37c407c0ed90b82"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Resources/Metadata.appintents/version.json",
+      "bytes": 52,
+      "sha256": "4bcc42bfd9f343c556f4a630dbd4c6607239c934859002b7a5389bd4045de99a"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Resources/Metadata.appintents/extract.actionsdata",
+      "bytes": 476671,
+      "sha256": "e5f1290d1bf43c86728d396bab16e76667aabefd788ef936718a9c2dadbd540d"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Extensions/Intents Extension.appex/Contents/embedded.provisionprofile",
+      "bytes": 14792,
+      "sha256": "ae9b6de45f750c34bf1bb396f29b27094ad5a79ffd464686352f0e8f57810090"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Extensions/Intents Extension.appex/Contents/Info.plist",
+      "bytes": 1702,
+      "sha256": "27aa03d929fd0d87b8ab75c4575c82caf6c392e70e64e1b4aeb66a942757851b"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Extensions/Intents Extension.appex/Contents/_CodeSignature/CodeResources",
+      "bytes": 2917,
+      "sha256": "fcbff20e984ca35868b9cfc7fdf8860c03f4bb5caa5dcb2440ee67227ee8c4c9"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Extensions/Intents Extension.appex/Contents/MacOS/Intents Extension",
+      "bytes": 11075648,
+      "sha256": "12906b4776d3e13966fa1e5225e2dd200fab690cd2d70e3e3e51ea4d8ed5e613"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Extensions/Intents Extension.appex/Contents/Resources/Metadata.appintents/version.json",
+      "bytes": 52,
+      "sha256": "4bcc42bfd9f343c556f4a630dbd4c6607239c934859002b7a5389bd4045de99a"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Extensions/Intents Extension.appex/Contents/Resources/Metadata.appintents/extract.actionsdata",
+      "bytes": 456823,
+      "sha256": "9b8ed9df8263aa549e7e649aefb28a363cca9f037176abdaea57123aedc705f3"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/SoulverCore",
+      "bytes": 9205520,
+      "sha256": "b5adc38325a0948cfea7820c65cf80d053955947282c6236e51c7f0fa1af0e87"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/Sentry.framework/Sentry",
+      "bytes": 84128,
+      "sha256": "74c6738912c4eccc9adb85e0841bc947d147fdd761ef1597b285414ae48346de"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/SoulverCore",
+      "bytes": 9205520,
+      "sha256": "b5adc38325a0948cfea7820c65cf80d053955947282c6236e51c7f0fa1af0e87"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/_CodeSignature/CodeResources",
+      "bytes": 31406,
+      "sha256": "9be144d949b9b23f23ec6bcb6a05bdd678d0de921e9d2b34b4507890b2aeb54a"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/PrivacyInfo.xcprivacy",
+      "bytes": 373,
+      "sha256": "9863ed6615ca3ce0411a261a6cb1a4146451ed837d1628a1bbd3f0636b51244b"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/Info.plist",
+      "bytes": 1398,
+      "sha256": "a221d508d8a5e6d83c050c3f9dbb84cd7f3df84de87dbaecdabea231085e603e"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/de.lproj/CurrencyDescriptions.json",
+      "bytes": 17327,
+      "sha256": "4ca19754eae3bbaaf9dd4c5f57a512d406621839e2d8a565133c2d93d9dfdcf8"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/de.lproj/ConverterDescriptions.json",
+      "bytes": 3980,
+      "sha256": "3f41d66b5efe44c7267dc5f3fa3c38515791b3bccebb9fe9889f9f6761ce2c58"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/de.lproj/LocalizedFixtures.json",
+      "bytes": 1502,
+      "sha256": "92f464028a1e4634e6b8aa9bde0f978b7acd3f28dc4163c4b0a848417842d95a"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/de.lproj/Localizable.strings",
+      "bytes": 3742,
+      "sha256": "7c007110f35325ca6c7a9ee1e16144b6d9d1d7602fb56f147b380f11f46e1872"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/de.lproj/LocalizedCities.json",
+      "bytes": 31882,
+      "sha256": "2bd28cfdbddd5f4ed52ae132ab5d630f40f021478959b320b8817638b11a85e4"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/de.lproj/UnitDescriptions.json",
+      "bytes": 25426,
+      "sha256": "df1ac28008da3e890fd79d37719ca5df2075d5a10f8b3cb7fd6818c86a3afcf0"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/de.lproj/Localizable.stringsdict",
+      "bytes": 5650,
+      "sha256": "216d2139b1be13204de2c113240ad48395f095077eaa801a574a4394de2bcd35"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/de.lproj/FunctionDescriptions.json",
+      "bytes": 14042,
+      "sha256": "f3b74dd4163a9d7b914cfa446af5db9a4f63ab2094d1d4dc42b52970a84d8076"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/zh-Hans.lproj/CurrencyDescriptions.json",
+      "bytes": 13386,
+      "sha256": "887909a2785da1bcab05ee4727a3fb88d6271caa605e16910edb80d2679622ea"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/zh-Hans.lproj/ConverterDescriptions.json",
+      "bytes": 3785,
+      "sha256": "ac609053ac9b350fe1e4fab3c7244a1439af9400e65e6e6b99079aff06e5e18f"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/zh-Hans.lproj/LocalizedFixtures.json",
+      "bytes": 967,
+      "sha256": "60c0912e23c6a4a8eac458476d014b4123921b9371393ecee578b149364d1a77"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/zh-Hans.lproj/Localizable.strings",
+      "bytes": 3178,
+      "sha256": "6b7f3f7c62d1050946eb92ad9a5a0db10b62235fbe0a0347e19e46650a2b811e"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/zh-Hans.lproj/LocalizedCities.json",
+      "bytes": 33703,
+      "sha256": "aa6f3adb19969c3f4909bcf19facd16d8f041a19d48b3a7083fc9c4e1630dc6b"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/zh-Hans.lproj/UnitDescriptions.json",
+      "bytes": 23841,
+      "sha256": "737cc2db91a5c1d2861dc0c932ac6f4584211673916ee96c48607f6f20c95464"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/zh-Hans.lproj/Localizable.stringsdict",
+      "bytes": 6252,
+      "sha256": "c07923aafc945422d5401bb79dde7947b984f6a1f926fef38c1578cdff1dfb84"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/zh-Hans.lproj/FunctionDescriptions.json",
+      "bytes": 10306,
+      "sha256": "41879428b7ef46e67e8fc5728f2e2af067e18fa9f98dbbeb77d6f9caa2bd06fb"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ja.lproj/CurrencyDescriptions.json",
+      "bytes": 23456,
+      "sha256": "807b26a575477bc13eb2dd3fc953daeb1136b048c218a9029bab79c54bf0c036"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ja.lproj/ConverterDescriptions.json",
+      "bytes": 7336,
+      "sha256": "97bb6e28868b65ce729c94ed2bb1990b1d8df1003531464f5b17b64aa0694f06"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ja.lproj/LocalizedFixtures.json",
+      "bytes": 3990,
+      "sha256": "714a097addca19d20d794770cc07155d59a1e137c9f7ccd4aadbe2927e8630d6"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ja.lproj/Localizable.strings",
+      "bytes": 3280,
+      "sha256": "a9d2be37319827a89b15eeccb19a9b9bd401e1033f659c618eefd9a7f94938e7"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ja.lproj/LocalizedCities.json",
+      "bytes": 37263,
+      "sha256": "9ffecd3e9cc5b9af8fa96df8e99136285ac2ccd86602d6b9a3fd6d197e518ccc"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ja.lproj/UnitDescriptions.json",
+      "bytes": 39732,
+      "sha256": "f07c93441a0b3ffb37ee8aed1fbc0dff9bbceacc0793366ab3e9df83028b1809"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ja.lproj/Localizable.stringsdict",
+      "bytes": 7952,
+      "sha256": "6313e6467d2ed04359513db9bf8a8c07c5709d2e01fd1c7c3106de10110452dc"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ja.lproj/FunctionDescriptions.json",
+      "bytes": 29066,
+      "sha256": "2f704f179ed20d4391aa78f4fe802a2737687281beb555b7b6cee8a0b4027f4f"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/en.lproj/Version.json",
+      "bytes": 42,
+      "sha256": "4895c7535690212cb6f0e762c6ab79df1a82e13e00291cc2625fbedc1c26e329"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/en.lproj/CurrencyDescriptions.json",
+      "bytes": 19968,
+      "sha256": "6c085600095cd5c0878e494a5a28c661ba3db3d880cbe91537786d65c5e863c7"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/en.lproj/ConverterDescriptions.json",
+      "bytes": 7875,
+      "sha256": "4becf0649f31b02e03896c083818fc65d14cc54a47721fa79ab709c91750a626"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/en.lproj/LocalizedFixtures.json",
+      "bytes": 2994,
+      "sha256": "8b65ce2ab88acd02b1768790778c74a4403363ebaccd6b3ed6f134e8a43c00e1"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/en.lproj/States.json",
+      "bytes": 14159,
+      "sha256": "1046ba45771b16f8dd50b7b9cdae701e47159040f491fe43f7647406ef52c66f"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/en.lproj/LocalizedFixtureShorthands.json",
+      "bytes": 325,
+      "sha256": "ea3e5face696f6a7aa91f364c375b31fbe2daa4c87d195f10cef77a64788edea"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/en.lproj/Countries.json",
+      "bytes": 75001,
+      "sha256": "cc58d699768224b22725b80c5a8328f9d0dfdf80fa6bc803bc18722930f8efc9"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/en.lproj/SpecialDays.json",
+      "bytes": 1213,
+      "sha256": "ccdcca3ebe37ee34ae73d6074f2a68aa2841ef583552df7092e125414f31d122"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/en.lproj/Localizable.strings",
+      "bytes": 4886,
+      "sha256": "cf2cf7e8bdd1a472cd267c535342fe7e3851953cb906e23d2d5ae9111f2e09fb"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/en.lproj/TimeZoneAbbrieviations.json",
+      "bytes": 1029,
+      "sha256": "15cef3114105a4145ca4c67d0ae84e9afc7e9874dac2722f00e62f36fe27d670"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/en.lproj/LocalizedCities.json",
+      "bytes": 33587,
+      "sha256": "089e7765392a4d2cca08f4e2b9c411e1720557758515c7e06d77b9097f6a1a10"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/en.lproj/UnitPlurals.json",
+      "bytes": 522,
+      "sha256": "9b05fdad91e6f8e0c4e4ab354e5ec77298e5f3b7d3881d5b792b65c8eb5b9587"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/en.lproj/UnitDescriptions.json",
+      "bytes": 50950,
+      "sha256": "4aa502c27e9d2cb4db436b7e8ce452ffcf8afdc6a3834d5899d050581e030021"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/en.lproj/LocalizedUnitShorthands.json",
+      "bytes": 280,
+      "sha256": "6dae2f11d3e7225f3c8c4ad98cd5682aab88f86108af2c7d1653b7e71a953cd4"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/en.lproj/Localizable.stringsdict",
+      "bytes": 7122,
+      "sha256": "5ff3996bacb7638bd6cf27af1ed3398efbde866809bc3d326e1bf8db400eaaca"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/en.lproj/Scalars.json",
+      "bytes": 1745,
+      "sha256": "7a88db46d6f26dcb8e68f759fc15fb9aa1584ba72667c165e72f1dcad1309748"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/en.lproj/DefaultCurrencyRates.json",
+      "bytes": 5574,
+      "sha256": "bdfa44d8266293ed5e02beac0b3b5d688051531b10cafcf8eee13c8121f61c6a"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/en.lproj/FunctionDescriptions.json",
+      "bytes": 41359,
+      "sha256": "daa52733840b9567ef97368891293d8b8d099d00bf87a87f7d7cecd122716e6b"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/en.lproj/Cities.json",
+      "bytes": 114020,
+      "sha256": "f53254f253fe330870389e686813f6a0b088d6461066fc906ce020e3d0173134"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/en.lproj/Airports.json",
+      "bytes": 57478,
+      "sha256": "2ddbd3f74449bca2c09bc77a30cfd338ff00a769bc45178519c2df7bb42c44c0"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/es.lproj/CurrencyDescriptions.json",
+      "bytes": 17231,
+      "sha256": "2ed67af9307f3e82654c9bbf19916ef5a01c9ad865432bfbd7395bfd86f1a0e3"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/es.lproj/ConverterDescriptions.json",
+      "bytes": 4392,
+      "sha256": "0b74d8319fe185e048a1a129aa4632a6e7b4cf1e311920a90d793f8a5711ba83"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/es.lproj/LocalizedFixtures.json",
+      "bytes": 1875,
+      "sha256": "1c550943b47f8436bf1abd99beac8c2ae63964dae0c735dff39b261d68f46caa"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/es.lproj/Localizable.strings",
+      "bytes": 3984,
+      "sha256": "79505e56f04848d3ae5e65b799577e336c3924a3580832197afa1452aa1bd579"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/es.lproj/LocalizedCities.json",
+      "bytes": 32702,
+      "sha256": "9fc69292b1b9b74eabe95747ce66b36207e0896daeb514f7bca8594d8fad37b7"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/es.lproj/UnitDescriptions.json",
+      "bytes": 45194,
+      "sha256": "612a560290e99f52330e328a356d74572de70a35952665b9a5e83438db39f433"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/es.lproj/Localizable.stringsdict",
+      "bytes": 7154,
+      "sha256": "8ba13bccd6a223ca0e523ccd59e0a30bf482ec67c2861770be201ba16d9d066c"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/es.lproj/FunctionDescriptions.json",
+      "bytes": 32253,
+      "sha256": "1179206e0a701511b97eab0911605b4751fe73ecc1d52680eb7e47cc7c208b94"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ko.lproj/CurrencyDescriptions.json",
+      "bytes": 21319,
+      "sha256": "4f81657c541b19a6319364eaa2c80a1615ada2f75c34a1178388eb489c76c0a6"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ko.lproj/ConverterDescriptions.json",
+      "bytes": 7336,
+      "sha256": "97bb6e28868b65ce729c94ed2bb1990b1d8df1003531464f5b17b64aa0694f06"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ko.lproj/LocalizedFixtures.json",
+      "bytes": 3611,
+      "sha256": "7c524f43538fdb867a03c51c81cce4c873bb8ea554b05777f4b96901e45e4c9a"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ko.lproj/Localizable.strings",
+      "bytes": 3264,
+      "sha256": "4738eceadf68e5839c08fcaf4c9ae00f51c5b5e757eea99f664c0701efa06b62"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ko.lproj/LocalizedCities.json",
+      "bytes": 35317,
+      "sha256": "685159ff0c277c53c6ac710462847e4504cb1817118dd53fa8bfecf333309bfd"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ko.lproj/UnitDescriptions.json",
+      "bytes": 38593,
+      "sha256": "5c6b75e07268e12c9bc4520cf105e489386bac65fdfa141385b42891e6072515"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ko.lproj/Localizable.stringsdict",
+      "bytes": 7946,
+      "sha256": "b7bdb6eefc4ff4635637803b50eaf15a910cb76a14e9b75a1d46f59264219fbd"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ko.lproj/FunctionDescriptions.json",
+      "bytes": 27970,
+      "sha256": "8ea9886c9a0bc8bc3c8f330484d2d83a5df8b7046ba2113f9146d6e1fe41872f"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ru.lproj/CurrencyDescriptions.json",
+      "bytes": 21064,
+      "sha256": "69e374cf98cfd14ac00943cde9694b6b459f320416f4d7f2db1bc696972348b5"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ru.lproj/ConverterDescriptions.json",
+      "bytes": 4501,
+      "sha256": "33eeecf7451e070c3beaefc29ffdcb0ace9940970fb977b33f0c191507a7e778"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ru.lproj/LocalizedFixtures.json",
+      "bytes": 1773,
+      "sha256": "a9732c69a072ea2ba345e5b938ce9f0026a653ed7bd5370bc8405bdfc7e01ec6"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ru.lproj/Localizable.strings",
+      "bytes": 3692,
+      "sha256": "db2935bfec4ca1a8023d1c846100d5486580c880e7c822f3d91ebdbbb356806c"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ru.lproj/LocalizedCities.json",
+      "bytes": 68593,
+      "sha256": "23cda78ebc2b0e2d115458706acaafa3bd563c9af761293d5ab85aecc96a04c9"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ru.lproj/UnitDescriptions.json",
+      "bytes": 36987,
+      "sha256": "e0a6a1c73a2796da279b7720d02e0dd4d069076d3796a1ec78abd4c6439874f6"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ru.lproj/Localizable.stringsdict",
+      "bytes": 7932,
+      "sha256": "59be33716ea224cb7240155b7f41080e82bd607125631a0a70d34d3e6a421a24"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/ru.lproj/FunctionDescriptions.json",
+      "bytes": 11338,
+      "sha256": "ed9fa6c90aab57aa0af9a9a9ae679b24ae6c56883cd0788b46c4a75a688f149a"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/fr.lproj/CurrencyDescriptions.json",
+      "bytes": 15709,
+      "sha256": "211787eccbcb463b2267718cd57e1bacae01d9ec50c41be16ff03c34b0a01941"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/fr.lproj/ConverterDescriptions.json",
+      "bytes": 4301,
+      "sha256": "a4192b22ae02b50e1bfaafad19a480569c9e238f7e73304c24fb780090ea10ee"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/fr.lproj/LocalizedFixtures.json",
+      "bytes": 1875,
+      "sha256": "ae13a526ca0bdb93e7409ec215582d90b8fb0e145ca09b8ec9a37a5a95a493db"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/fr.lproj/Localizable.strings",
+      "bytes": 3840,
+      "sha256": "0b784948e91362834d66bedfd4235fffa399bc6a58bf4081acd62e6f2928cea1"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/fr.lproj/LocalizedCities.json",
+      "bytes": 32674,
+      "sha256": "d7cafce9549118b043b43602f34c70416dc2ad922865d20db8cb79c7efdc3cf2"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/fr.lproj/UnitDescriptions.json",
+      "bytes": 30602,
+      "sha256": "edd0cb36228ed563c96cea2a5c097fb946f2e887fb57fb0cdfaf67de900b05aa"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/fr.lproj/Localizable.stringsdict",
+      "bytes": 7142,
+      "sha256": "e04d2c4d2410d4f0fa467769d17cca79f9dd53961daa010829e7c1c63972f589"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/SoulverCore.framework/Versions/A/Resources/fr.lproj/FunctionDescriptions.json",
+      "bytes": 24627,
+      "sha256": "ab2481927331bdc706140134bcd0a4898cd3898a89db301dbbeaad1bf2af6522"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/Sentry.framework/Versions/A/Sentry",
+      "bytes": 84128,
+      "sha256": "74c6738912c4eccc9adb85e0841bc947d147fdd761ef1597b285414ae48346de"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/Sentry.framework/Versions/A/_CodeSignature/CodeResources",
+      "bytes": 2690,
+      "sha256": "ae37c69a66ef983863ceeff2896b5554ae279b1b9cba9255e65b8209fc122271"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/Sentry.framework/Versions/A/Resources/PrivacyInfo.xcprivacy",
+      "bytes": 2108,
+      "sha256": "118b16e0e97ffe8b6f1f01b7e04f68e5da764474a4d39d2933b0eeaef3cdc0ca"
+    },
+    {
+      "path": "work/actions-app/Actions.app/Contents/Frameworks/Sentry.framework/Versions/A/Resources/Info.plist",
+      "bytes": 1328,
+      "sha256": "ef55c0dd1b5ea510cd654939302a8f4c94f1692f1ef63f641921ef115d14b3ae"
+    }
+  ]
+}

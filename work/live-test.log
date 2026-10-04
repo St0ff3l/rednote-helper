@@ -1,0 +1,203 @@
+ACTION is.workflow.actions.gettext OK
+RESULT <WFContentCollection: 0x7c92a54b20>: (
+    "<WFStringContentItem: 0x7c8f8d9090>: <html><script>window.__INITIAL_STATE__={\"global\": {\"appSettings\": {\"fakeModalPercent\": 0.02, \"fakeMo"
+)
+ACTION is.workflow.actions.getrichtextfromhtml OK
+RESULT <WFContentCollection: 0x7c93546500>: (
+    "<WFRichTextContentItem: 0x7c8fe13e00>: <html><script>window.__INITIAL_STATE__={\"global\": {\"appSettings\": {\"fakeModalPercent\": 0.02, \"fakeMo"
+)
+ACTION is.workflow.actions.gethtmlfromrichtext OK
+RESULT <WFContentCollection: 0x7c93546300>: (
+    "<WFStringContentItem: 0x7c8fe4bb10>: <html><script>window.__INITIAL_STATE__={\"global\": {\"appSettings\": {\"fakeModalPercent\": 0.02, \"fakeMo"
+)
+ACTION is.workflow.actions.text.match OK
+RESULT <WFContentCollection: 0x7c92a551a0>: (
+    "<WFCustomIntentOutputContentItem_7g83r3_TextMatch: 0x7c8feb13c0>: {\"global\": {\"appSettings\": {\"fakeModalPercent\": 0.02, \"fakeModalWhiteList\": [], \"noteShareCardWhiteL"
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x7c92a54aa0>: (
+    "<WFNumberContentItem: 0x7c8f89e440>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7c92a55760>: (
+    "<WFNumberContentItem: 0x7c8f89e440>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7c92a55760>: (
+    "<WFNumberContentItem: 0x7c8f89e440>: 1"
+)
+ACTION is.workflow.actions.getitemfromlist OK
+RESULT <WFContentCollection: 0x7c92a55700>: (
+    "<WFCustomIntentOutputContentItem_7g83r3_TextMatch: 0x7c8feb13c0>: {\"global\": {\"appSettings\": {\"fakeModalPercent\": 0.02, \"fakeModalWhiteList\": [], \"noteShareCardWhiteL"
+)
+ACTION is.workflow.actions.text.replace OK
+RESULT <WFContentCollection: 0x7c93547500>: (
+    "<WFStringContentItem: 0x7c8feccaf0>: {\"global\": {\"appSettings\": {\"fakeModalPercent\": 0.02, \"fakeModalWhiteList\": [], \"noteShareCardWhiteL"
+)
+ACTION is.workflow.actions.detect.dictionary OK
+RESULT <WFContentCollection: 0x7c92a3b740>: (
+    "<WFDictionaryContentItem: 0x7c8feb1540>: Dictionary"
+)
+ACTION is.workflow.actions.getvalueforkey OK
+RESULT <WFContentCollection: 0x7c93547440>: (
+    "<WFDictionaryContentItem: 0x7c8feb14c0>: Dictionary"
+)
+ACTION is.workflow.actions.nothing OK
+RESULT <WFContentCollection: 0x7c93547140>: (
+)
+ACTION is.workflow.actions.setvariable OK
+RESULT <WFContentCollection: 0x7c92a55c80>: (
+)
+ACTION is.workflow.actions.getvalueforkey OK
+RESULT <WFContentCollection: 0x7c93648020>: (
+    "<WFStringContentItem: 0x7c8fecc2d0>: normal"
+)
+ACTION is.workflow.actions.text.match OK
+RESULT <WFContentCollection: 0x7c92a555e0>: (
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x7c936484c0>: (
+    "<WFNumberContentItem: 0x7c8feb1600>: 0"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7c936485a0>: (
+    "<WFNumberContentItem: 0x7c8feb1600>: 0"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7c936485a0>: (
+    "<WFNumberContentItem: 0x7c8feb1600>: 0"
+)
+ACTION is.workflow.actions.getvalueforkey OK
+RESULT <WFContentCollection: 0x7c936487e0>: (
+    "<WFDictionaryContentItem: 0x7c8feb1480>: Dictionary"
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x7c936484a0>: (
+    "<WFNumberContentItem: 0x7c8feb1500>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7c92a55fa0>: (
+    "<WFNumberContentItem: 0x7c8feb1500>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7c92a55fa0>: (
+    "<WFNumberContentItem: 0x7c8feb1500>: 1"
+)
+ACTION is.workflow.actions.text.match OK
+RESULT <WFContentCollection: 0x7c936482e0>: (
+    "<WFCustomIntentOutputContentItem_7g83r3_TextMatch: 0x7c8feb1440>: \"livePhoto\":true"
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x7c936487a0>: (
+    "<WFNumberContentItem: 0x7c8feb1580>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7c93648be0>: (
+    "<WFNumberContentItem: 0x7c8feb1580>: 1"
+)
+ACTION is.workflow.actions.comment OK
+RESULT <WFContentCollection: 0x7c93648b80>: (
+    "<WFNumberContentItem: 0x7c8feb1580>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7c93648a60>: (
+    "<WFNumberContentItem: 0x7c8feb1580>: 1"
+)
+ACTION is.workflow.actions.repeat.each OK
+RESULT <WFContentCollection: 0x7c93648f60>: (
+    "<WFDictionaryContentItem: 0x7c8feb1480>: Dictionary"
+)
+ACTION is.workflow.actions.getvalueforkey OK
+RESULT <WFContentCollection: 0x7c93648e20>: (
+    "<WFStringContentItem: 0x7c8fecc000>: notes_pre_post/1040g3k8325mlrrs9l6005qjaok14u0011bbf4g0"
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x7c93648bc0>: (
+    "<WFNumberContentItem: 0x7c8feb15c0>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7c93649340>: (
+    "<WFNumberContentItem: 0x7c8feb15c0>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7c93649340>: (
+    "<WFNumberContentItem: 0x7c8feb15c0>: 1"
+)
+ACTION is.workflow.actions.gettext OK
+RESULT <WFContentCollection: 0x7c93648c60>: (
+    "<WFStringContentItem: 0x7c8feccd70>: https://ci.xiaohongshu.com/notes_pre_post/1040g3k8325mlrrs9l6005qjaok14u0011bbf4g0"
+)
+ACTION is.workflow.actions.appendvariable OK
+RESULT <WFContentCollection: 0x7c92a562e0>: (
+    "<WFStringContentItem: 0x7c8feccd70>: https://ci.xiaohongshu.com/notes_pre_post/1040g3k8325mlrrs9l6005qjaok14u0011bbf4g0"
+)
+ACTION is.workflow.actions.text.match OK
+RESULT <WFContentCollection: 0x7c93649660>: (
+    "<WFCustomIntentOutputContentItem_7g83r3_TextMatch: 0x7c8f89e700>: \"livePhoto\":true"
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x7c92a56620>: (
+    "<WFNumberContentItem: 0x7c8f89e800>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7c92a56880>: (
+    "<WFNumberContentItem: 0x7c8f89e800>: 1"
+)
+ACTION is.workflow.actions.gettext OK
+RESULT <WFContentCollection: 0x7c92a565e0>: (
+    "<WFStringContentItem: 0x7c8f8db3e0>: {\"stream\":{\"h264\":[{\"masterUrl\":\"https:\\/\\/sns-video.example.test\\/live.mp4\"}]},\"fileId\":\"notes_pre_"
+)
+ACTION is.workflow.actions.text.match OK
+RESULT <WFContentCollection: 0x7c92a564a0>: (
+    "<WFCustomIntentOutputContentItem_7g83r3_TextMatch: 0x7c8f89e6c0>: \"masterUrl\":\"https:\\/\\/sns-video.example.test\\/live.mp4\""
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x7c92a56420>: (
+    "<WFNumberContentItem: 0x7c8f89e880>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7c93649b20>: (
+    "<WFNumberContentItem: 0x7c8f89e880>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7c93649b20>: (
+    "<WFNumberContentItem: 0x7c8f89e880>: 1"
+)
+ACTION is.workflow.actions.getitemfromlist OK
+RESULT <WFContentCollection: 0x7c93648ba0>: (
+    "<WFCustomIntentOutputContentItem_7g83r3_TextMatch: 0x7c8f89e6c0>: \"masterUrl\":\"https:\\/\\/sns-video.example.test\\/live.mp4\""
+)
+ACTION is.workflow.actions.text.match.getgroup OK
+RESULT <WFContentCollection: 0x7c936499c0>: (
+    "<WFStringContentItem: 0x7c8fecd6d0>: https:\\/\\/sns-video.example.test\\/live.mp4"
+)
+ACTION is.workflow.actions.text.replace OK
+RESULT <WFContentCollection: 0x7c9364a0a0>: (
+    "<WFStringContentItem: 0x7c8fecd720>: https://sns-video.example.test/live.mp4"
+)
+ACTION is.workflow.actions.appendvariable OK
+RESULT <WFContentCollection: 0x7c93649740>: (
+    "<WFStringContentItem: 0x7c8feccd70>: https://ci.xiaohongshu.com/notes_pre_post/1040g3k8325mlrrs9l6005qjaok14u0011bbf4g0",
+    "<WFStringContentItem: 0x7c8fecd720>: https://sns-video.example.test/live.mp4"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7c93649880>: (
+    "<WFStringContentItem: 0x7c8feccd70>: https://ci.xiaohongshu.com/notes_pre_post/1040g3k8325mlrrs9l6005qjaok14u0011bbf4g0",
+    "<WFStringContentItem: 0x7c8fecd720>: https://sns-video.example.test/live.mp4"
+)
+ACTION is.workflow.actions.repeat.each OK
+RESULT <WFContentCollection: 0x7c93649220>: (
+    "<WFStringContentItem: 0x7c8feccd70>: https://ci.xiaohongshu.com/notes_pre_post/1040g3k8325mlrrs9l6005qjaok14u0011bbf4g0",
+    "<WFStringContentItem: 0x7c8fecd720>: https://sns-video.example.test/live.mp4"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x7c93649c60>: (
+    "<WFStringContentItem: 0x7c8feccd70>: https://ci.xiaohongshu.com/notes_pre_post/1040g3k8325mlrrs9l6005qjaok14u0011bbf4g0",
+    "<WFStringContentItem: 0x7c8fecd720>: https://sns-video.example.test/live.mp4"
+)
+ACTION is.workflow.actions.getvariable OK
+RESULT <WFContentCollection: 0x7c9364a900>: (
+    "<WFStringContentItem: 0x7c8feccd70>: https://ci.xiaohongshu.com/notes_pre_post/1040g3k8325mlrrs9l6005qjaok14u0011bbf4g0",
+    "<WFStringContentItem: 0x7c8fecd720>: https://sns-video.example.test/live.mp4"
+)
+DONE OK false
