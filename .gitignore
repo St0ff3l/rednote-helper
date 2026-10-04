@@ -14,9 +14,6 @@ __pycache__/
 /work/reference-decoded/*
 !/work/reference-decoded/Shortcut.wflow
 
-# Full runtime transcript remains local; readable conversation stays tracked.
-/archive/conversation.jsonl
-
 # Sample media stays local; signed shortcuts and instructions are deliverables.
 /outputs/*.jpg
 /outputs/*.jpeg
