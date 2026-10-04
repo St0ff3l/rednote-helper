@@ -1,47 +1,34 @@
-# xhs-media-helper
+# rednote-helper
 
-xhs 素材获取助手：用于 iOS 快捷指令的图片、视频和 Live 素材解析、预览、多选及相册保存实验。
+项目中文名：**小红书助手**。当前快捷指令名为「小红书助手」，项目版本为 v1。
 
-## 当前状态
+当前版本是 [小红书助手](outputs/小红书助手.shortcut)，说明见 [小红书助手 v1 说明](outputs/小红书助手%20v1%20说明.md)。快捷指令按 Live、图片、视频分流，支持预览和手动多选（默认不全选）。
 
-- 最新文件：`outputs/小红书选择保存-V3-实况.shortcut`。
-- 静态图下载原尺寸文件；真实样例已验证原尺寸静态图没有平台附加水印。
-- 支持预览、多选；V3 加入 Actions 的“Make Live Photo from Video”动作。当前 Actions 版本需要 iOS 26+。
-- 真实笔记的本地解析与素材匹配测试通过；签名和导入通过。
-- **尚未完成 iPhone 相册保存验证；Live 动态视频无水印目标尚未完成。**
-- 已抽帧确认用户提供的 Live 笔记，其网页动态视频右下角含小红书水印。合成不会消除它。
-- Actions 从视频帧生成封面，不能保留独立原尺寸封面。不得将该合成过程描述为原始 Live Photo 无损还原。
-- 用户选择在 iPhone 测试，不授权在 Mac 运行下载的 Actions App。
+- 静态图片与普通视频在快捷指令内解析笔记网页并从 CDN 下载，再调用系统相册动作保存；普通视频不依赖动图工厂。
+- Live 图本地解析笔记页面，下载封面及配对视频，再交给动图工厂合成并保存为 Live Photo。每次进入 Live 分支都会显示“已安装，继续 / 未安装，去 App Store 下载”；下载分支打开官方页面并结束本次运行。iOS Shortcuts 没有可靠的已安装 App 检测，因此已安装用户也需每次点“继续”。
+- 没有接入 Pro 作者或其他解析云服务；不要求解析授权码。动态源是否带水印、封面是否保持原尺寸、以及 Live 是否成功写入 iPhone 相册仍需实机验证。
 
-## 文件
+`references/` 保存两份仅供本项目内部对照的快捷指令：Pro v4.7，以及用户提供的独立参考快捷指令「小红书下载器」（分享卡片标题）。两者与本项目独立，名称和流程不作为本项目产品名或最终实现的来源。
+
+## 当前文件
 
 | 路径 | 内容 |
 | --- | --- |
-| `outputs/` | 各版签名快捷指令、样例图片和说明 |
-| `work/build-v3.py` | V3 生成脚本，依赖 V2 及参考快捷指令 |
-| `work/build-v3-generated.py` | 展开的 V3 生成脚本 |
-| `work/run-native.swift` | macOS 原生快捷指令执行器测试工具 |
-| `work/test-v3-real.py` | 从已捕获网页构建解析测试夹具 |
-| `work/real-v3-live.log` | V3 Live 解析测试结果 |
-| `work/actions-app/` | 作者官网链接下载的 Actions 4.0.1，仅用于静态元数据核对，未运行 |
-| `archive/conversation.md` | 可读对话存档 |
-| `archive/conversation.jsonl` | 原始对话记录，含工具调用与结果 |
-| `archive/screenshots/` | 用户提供的原始流程截图 |
-| `archive/migration-manifest.json` | 原文件校验清单 |
-
-下载的 App、原始网页/媒体、生成的测试夹具、执行日志及完整 JSONL 对话仅在本地保留，由 `.gitignore` 排除。仓库保留源码、参考工作流、签名快捷指令、说明、可读对话及用户截图。解析测试依赖本地捕获的网页，不是新克隆仓库即可运行的联网测试。
-
-此仓库为私密研究存档。网页响应和签名媒体地址可能过期，记录中可能包含个人对话信息。第三方 App、素材及代码的权利属于原作者；未授予整个存档统一开源许可证。
+| `outputs/` | V1 快捷指令和使用说明 |
+| `references/` | Pro 与流程参考原件，仅供对照 |
+| `scripts/build_v1.py` | V1 工作流生成器 |
+| `scripts/test_v1_live_parser.py` | Live 配对及菜单静态检查 |
+| `scripts/test_v1_image_parser.py` | 图片解析测试 |
+| `scripts/test_v1_fixture.py` | 三类保存流程夹具测试 |
 
 ## 重新生成
 
-在项目根目录执行（macOS）：
-
 ```sh
-python3 work/build-v3.py
-shortcuts sign --mode anyone --input work/xhs-v3-unsigned.shortcut --output outputs/小红书选择保存-V3-实况.shortcut
-python3 work/test-v3-real.py
-swift work/run-native.swift work/test-v3-real-live.shortcut
+python3 scripts/build_v1.py
+shortcuts sign --mode anyone --input work/xhs-v1-unsigned.shortcut --output 'outputs/小红书助手.shortcut'
+python3 scripts/test_v1_live_parser.py
+python3 scripts/test_v1_image_parser.py
+python3 scripts/test_v1_fixture.py
 ```
 
-签名不代表手机保存验证完成。测试夹具替代了联网、用户选择和相册动作，只验证解析及对应媒体地址。
+测试使用本地捕获的网页及媒体夹具。它们替换网络、第三方 App、用户选择和相册写入；测试结果不代表 iPhone 端到端保存成功。
