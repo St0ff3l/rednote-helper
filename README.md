@@ -4,11 +4,11 @@ xhs 素材获取助手：用于 iOS 快捷指令的图片、视频和 Live 素�
 
 ## 当前状态
 
-- [iCloud 导入小红书素材助手 V4.4](https://www.icloud.com/shortcuts/5cff5e7a942348febb47f56e99db0e31)。
-- 最新优化版：`outputs/小红书素材助手 V4.4.shortcut`，说明见 `outputs/V4.4保存结果提示版说明.md`；原 V4 保留用于回退。
+- [iCloud 导入小红书素材助手 V4.5](https://www.icloud.com/shortcuts/851d0e6ab7da4c409d4aeeb6d241ee06)。
+- 最新优化版：`outputs/小红书素材助手 V4.5.shortcut`，说明见 `outputs/V4.5本地解析版说明.md`；原 V4 保留用于回退。
 - 用户选择沿用参考作者的实况捷径 App 和解析服务。初始菜单分为 Live、图片、视频，支持预览和多选。
 - V4.2 静态图片本地解析移动网页原图标识，下载原图端点；确认多选后直接保存，移除额外快速查看。Live 将独立封面 PNG 与视频文件交给动图工厂保存，图片 PNG 与视频使用系统相册。Live 解析仍需要实况捷径的 payload；未接入新卖家的付费解析和设备绑定。
-- 用户已反馈 V4.3 可成功保存。V4.4 新增带数量的成功通知和各分支详细错误提示；本版通过本地夹具验证并签名，新增提示仍需用户在 iPhone 测试。真实解析服务 POST 未在此环境验证成功。
+- 用户已反馈 V4.3 可成功保存。V4.5 沿用成功数量通知和详细分支错误提示，Live 与视频解析已改为本地读取网页状态；该本地解析尚待 iPhone 实测。
 - **动态源无水印与保存后的原尺寸封面仍需验证**；不裁剪或 AI 擦除，不把拆分保存等同于 Live Photo。
 - 不在 Mac 运行下载的 Actions 或实况捷径 App。V3 和免费版实验不作为当前推荐版本。
 - 自有图片流程没有授权码设置；只有调用第三方的 Live/视频分支说明其服务额度与可选授权码。
@@ -39,7 +39,7 @@ xhs 素材获取助手：用于 iOS 快捷指令的图片、视频和 Live 素�
 
 ```sh
 python3 scripts/build_v4.py
-shortcuts sign --mode anyone --input work/xhs-v4-unsigned.shortcut --output 'outputs/小红书素材助手 V4.4.shortcut'
+shortcuts sign --mode anyone --input work/xhs-v4-unsigned.shortcut --output 'outputs/小红书素材助手 V4.5.shortcut'
 python3 scripts/test_v4_fixture.py
 ```
 
