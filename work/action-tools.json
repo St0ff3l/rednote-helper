@@ -1,0 +1,213 @@
+{
+  "appendvariable" : {
+    "inputParameterKey" : "WFInput",
+    "localizedName" : "Add to Variable",
+    "params" : [
+      {
+        "Class" : "WFVariableFieldParameter",
+        "Key" : "WFVariableName",
+        "Label" : "<_NSStringLocalizationResource: 0x757abf5140>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Variable (WFVariableName)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Variable\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))"
+      },
+      {
+        "Class" : "WFVariablePickerParameter",
+        "Key" : "WFInput",
+        "Label" : "<_NSStringLocalizationResource: 0x757abf5190>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Input (WFInput)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Input\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))"
+      }
+    ],
+    "serializedParameters" : {
+
+    }
+  },
+  "base64decode" : {
+    "localizedName" : "Unknown Action",
+    "serializedParameters" : {
+
+    }
+  },
+  "base64encode" : {
+    "inputParameterKey" : "WFInput",
+    "localizedName" : "Base64 Encode",
+    "params" : [
+      {
+        "Class" : "WFEnumerationParameter",
+        "DefaultValue" : "Encode",
+        "Items" : [
+          "<_NSStringLocalizationResource: 0x757abf54f0>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Encode (WFEncodeMode)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Encode\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))",
+          "<_NSStringLocalizationResource: 0x757abf5510>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Decode (WFEncodeMode)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Decode\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))"
+        ],
+        "Key" : "WFEncodeMode",
+        "Label" : "<_NSStringLocalizationResource: 0x757abf5530>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Mode (WFEncodeMode)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Mode\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))"
+      },
+      {
+        "Class" : "WFEnumerationParameter",
+        "DefaultValue" : "Every 76 Characters",
+        "Items" : [
+          "<_NSStringLocalizationResource: 0x757abf5560>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"None (WFBase64LineBreakMode)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"None\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))",
+          "<_NSStringLocalizationResource: 0x757abf5580>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Every 64 Characters (WFBase64LineBreakMode)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Every 64 Characters\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))",
+          "<_NSStringLocalizationResource: 0x757abf55a0>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Every 76 Characters (WFBase64LineBreakMode)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Every 76 Characters\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))"
+        ],
+        "Key" : "WFBase64LineBreakMode",
+        "Label" : "<_NSStringLocalizationResource: 0x757abf55c0>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Line Breaks (WFBase64LineBreakMode)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Line Breaks\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))"
+      },
+      {
+        "Class" : "WFVariablePickerParameter",
+        "Key" : "WFInput",
+        "Label" : "<_NSStringLocalizationResource: 0x757abf55f0>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Input (WFInput)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Input\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))"
+      }
+    ],
+    "serializedParameters" : {
+
+    }
+  },
+  "combine.text" : {
+    "localizedName" : "Unknown Action",
+    "serializedParameters" : {
+
+    }
+  },
+  "gettype" : {
+    "localizedName" : "Unknown Action",
+    "serializedParameters" : {
+
+    }
+  },
+  "gettypeaction" : {
+    "inputParameterKey" : "WFInput",
+    "localizedName" : "Get File of Type",
+    "params" : [
+      {
+        "Class" : "WFTextInputParameter",
+        "DefaultValue" : "public.rtf",
+        "Key" : "WFFileType",
+        "Label" : "<_NSStringLocalizationResource: 0x757abf56e0>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Type (WFFileType)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Type\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))"
+      },
+      {
+        "Class" : "WFVariablePickerParameter",
+        "Key" : "WFInput",
+        "Label" : "<_NSStringLocalizationResource: 0x757abf5730>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Input (WFInput)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Input\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))"
+      }
+    ],
+    "serializedParameters" : {
+
+    }
+  },
+  "getvalueforkey" : {
+    "inputParameterKey" : "WFInput",
+    "localizedName" : "Get Dictionary Value",
+    "params" : [
+      {
+        "Class" : "WFEnumerationParameter",
+        "DefaultValue" : "Value",
+        "Items" : [
+          "<_NSStringLocalizationResource: 0x757abf5ed0>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Value (WFGetDictionaryValueType)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Value\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/ActionKit.framework\/, _sandboxExtensionToken: nil)))",
+          "<_NSStringLocalizationResource: 0x757abf5ef0>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"All Keys (WFGetDictionaryValueType)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"All Keys\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/ActionKit.framework\/, _sandboxExtensionToken: nil)))",
+          "<_NSStringLocalizationResource: 0x757abf5f10>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"All Values (WFGetDictionaryValueType)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"All Values\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/ActionKit.framework\/, _sandboxExtensionToken: nil)))"
+        ],
+        "Key" : "WFGetDictionaryValueType",
+        "Label" : "<_NSStringLocalizationResource: 0x757abf5f30>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Get (WFGetDictionaryValueType)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Get\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/ActionKit.framework\/, _sandboxExtensionToken: nil)))"
+      },
+      {
+        "Class" : "WFTextInputParameter",
+        "Key" : "WFDictionaryKey",
+        "Label" : "<_NSStringLocalizationResource: 0x757abf5f60>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Key (WFDictionaryKey)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Key\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/ActionKit.framework\/, _sandboxExtensionToken: nil)))"
+      },
+      {
+        "Class" : "WFVariablePickerParameter",
+        "Key" : "WFInput",
+        "Label" : "<_NSStringLocalizationResource: 0x757abf5fb0>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Dictionary (WFInput)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Dictionary\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/ActionKit.framework\/, _sandboxExtensionToken: nil)))"
+      }
+    ],
+    "serializedParameters" : {
+
+    }
+  },
+  "getvariable" : {
+    "localizedName" : "Get Variable",
+    "params" : [
+      {
+        "Class" : "WFVariablePickerParameter",
+        "Key" : "WFVariable",
+        "Label" : "<_NSStringLocalizationResource: 0x757abf53e0>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Variable (WFVariable)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Variable\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))"
+      }
+    ],
+    "serializedParameters" : {
+
+    }
+  },
+  "quicklook" : {
+    "localizedName" : "Unknown Action",
+    "serializedParameters" : {
+
+    }
+  },
+  "setname" : {
+    "localizedName" : "Unknown Action",
+    "serializedParameters" : {
+
+    }
+  },
+  "setvariable" : {
+    "inputParameterKey" : "WFInput",
+    "localizedName" : "Set Variable",
+    "params" : [
+      {
+        "Class" : "WFVariablePickerParameter",
+        "Key" : "WFInput",
+        "Label" : "<_NSStringLocalizationResource: 0x757abf5280>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Input (WFInput)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Input\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))"
+      },
+      {
+        "Class" : "WFVariableFieldParameter",
+        "Key" : "WFVariableName",
+        "Label" : "<_NSStringLocalizationResource: 0x757abf52d0>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Variable (WFVariableName)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Variable\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))"
+      }
+    ],
+    "serializedParameters" : {
+
+    }
+  },
+  "share" : {
+    "inputParameterKey" : "WFInput",
+    "localizedName" : "Share",
+    "params" : [
+      {
+        "Class" : "WFVariablePickerParameter",
+        "Key" : "WFInput",
+        "Label" : "<_NSStringLocalizationResource: 0x757abf5820>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Content (WFInput)\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Content\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/, _sandboxExtensionToken: nil)))"
+      }
+    ],
+    "serializedParameters" : {
+
+    }
+  },
+  "text.split" : {
+    "inputParameterKey" : "text",
+    "localizedName" : "拆分文本",
+    "params" : [
+      {
+        "Class" : "WFTextInputParameter",
+        "Key" : "text",
+        "Label" : "<WFINCodableAttributeParameterName: 0x757abf5c90>"
+      },
+      {
+        "Class" : "WFCustomIntentEnumerationParameter",
+        "DefaultValue" : "New Lines",
+        "Key" : "WFTextSeparator",
+        "Label" : "<WFINCodableAttributeParameterName: 0x757abf5c80>"
+      },
+      {
+        "Class" : "WFTextInputParameter",
+        "Key" : "WFTextCustomSeparator",
+        "Label" : "<WFINCodableAttributeParameterName: 0x757abf5d50>"
+      },
+      {
+        "Class" : "WFSwitchParameter",
+        "DefaultValue" : true,
+        "Key" : "ShowWhenRun",
+        "Label" : "<_NSStringLocalizationResource: 0x757abf5dc0>(_NSLocalizedStringResourceSwiftWrapper(wrapped: LocalizedStringResource(key: \"Show When Run\", defaultValue: (extension in Foundation):Swift.String.LocalizationValue(arguments: [], key: \"Show When Run\"), table: nil, locale: zh_CN (autoupdating zh_CN), _bundleURL: file:\/\/\/System\/Library\/PrivateFrameworks\/WorkflowKit.framework\/Versions\/A\/, _sandboxExtensionToken: nil)))"
+      }
+    ],
+    "serializedParameters" : {
+
+    }
+  }
+}

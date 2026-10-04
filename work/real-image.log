@@ -1,0 +1,272 @@
+ACTION is.workflow.actions.gettext OK
+RESULT <WFContentCollection: 0x776f569720>: (
+    "<WFStringContentItem: 0x776b94d040>: <!doctype html><html><head><script formula-runtime >function e(e){for(var r=1;r<arguments.length;r++"
+)
+ACTION is.workflow.actions.getrichtextfromhtml OK
+RESULT <WFContentCollection: 0x776f9efbe0>: (
+    "<WFRichTextContentItem: 0x776b645c00>: <!doctype html><html><head><script formula-runtime >function e(e){for(var r=1;r<arguments.length;r++"
+)
+ACTION is.workflow.actions.gethtmlfromrichtext OK
+RESULT <WFContentCollection: 0x776f569320>: (
+    "<WFStringContentItem: 0x776b94ec60>: <!doctype html><html><head><script formula-runtime >function e(e){for(var r=1;r<arguments.length;r++"
+)
+ACTION is.workflow.actions.text.match OK
+RESULT <WFContentCollection: 0x776fa28240>: (
+    "<WFCustomIntentOutputContentItem_7g83r3_TextMatch: 0x776b646200>: {\"global\":{\"appSettings\":{\"fakeModalPercent\":0.02,\"fakeModalWhiteList\":[],\"noteShareCardWhiteList\":["
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x776f56a940>: (
+    "<WFNumberContentItem: 0x776b91ee00>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x776fa286e0>: (
+    "<WFNumberContentItem: 0x776b91ee00>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x776fa286e0>: (
+    "<WFNumberContentItem: 0x776b91ee00>: 1"
+)
+ACTION is.workflow.actions.getitemfromlist OK
+RESULT <WFContentCollection: 0x776f56abe0>: (
+    "<WFCustomIntentOutputContentItem_7g83r3_TextMatch: 0x776b646200>: {\"global\":{\"appSettings\":{\"fakeModalPercent\":0.02,\"fakeModalWhiteList\":[],\"noteShareCardWhiteList\":["
+)
+ACTION is.workflow.actions.text.replace OK
+RESULT <WFContentCollection: 0x776fa28620>: (
+    "<WFStringContentItem: 0x776b63dae0>: {\"global\":{\"appSettings\":{\"fakeModalPercent\":0.02,\"fakeModalWhiteList\":[],\"noteShareCardWhiteList\":["
+)
+ACTION is.workflow.actions.detect.dictionary OK
+RESULT <WFContentCollection: 0x776fa28ec0>: (
+    "<WFDictionaryContentItem: 0x776b6461c0>: Dictionary"
+)
+ACTION is.workflow.actions.getvalueforkey OK
+RESULT <WFContentCollection: 0x776fa29940>: (
+    "<WFDictionaryContentItem: 0x776b645d80>: Dictionary"
+)
+ACTION is.workflow.actions.nothing OK
+RESULT <WFContentCollection: 0x776f56aae0>: (
+)
+ACTION is.workflow.actions.setvariable OK
+RESULT <WFContentCollection: 0x776fa29a60>: (
+)
+ACTION is.workflow.actions.getvalueforkey OK
+RESULT <WFContentCollection: 0x776f56ac80>: (
+    "<WFStringContentItem: 0x776b94ee90>: normal"
+)
+ACTION is.workflow.actions.text.match OK
+RESULT <WFContentCollection: 0x776f56ae80>: (
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x776f56b180>: (
+    "<WFNumberContentItem: 0x776b91f0c0>: 0"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x776f56b1a0>: (
+    "<WFNumberContentItem: 0x776b91f0c0>: 0"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x776f56b1a0>: (
+    "<WFNumberContentItem: 0x776b91f0c0>: 0"
+)
+ACTION is.workflow.actions.getvalueforkey OK
+RESULT <WFContentCollection: 0x776f56b3a0>: (
+    "<WFDictionaryContentItem: 0x776b91efc0>: Dictionary"
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x776f56b160>: (
+    "<WFNumberContentItem: 0x776b91f000>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x776fa29fe0>: (
+    "<WFNumberContentItem: 0x776b91f000>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x776fa29fe0>: (
+    "<WFNumberContentItem: 0x776b91f000>: 1"
+)
+ACTION is.workflow.actions.text.match OK
+RESULT <WFContentCollection: 0x776f56b7c0>: (
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x776f56b6e0>: (
+    "<WFNumberContentItem: 0x776b91f180>: 0"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x776f56b500>: (
+    "<WFNumberContentItem: 0x776b91f180>: 0"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x776f56b500>: (
+    "<WFNumberContentItem: 0x776b91f180>: 0"
+)
+ACTION is.workflow.actions.repeat.each OK
+RESULT <WFContentCollection: 0x776f56b560>: (
+    "<WFDictionaryContentItem: 0x776b91efc0>: Dictionary"
+)
+ACTION is.workflow.actions.getvalueforkey OK
+RESULT <WFContentCollection: 0x776f56b780>: (
+    "<WFStringContentItem: 0x776b94efd0>: http://sns-webpic-qc.xhscdn.com/202610041116/960506816522a631b3ee30a4299cc38c/notes_pre_post/1040g3k"
+)
+ACTION is.workflow.actions.text.replace OK
+RESULT <WFContentCollection: 0x776fa2a120>: (
+    "<WFStringContentItem: 0x776b63d450>: https://sns-webpic-qc.xhscdn.com/202610041116/960506816522a631b3ee30a4299cc38c/notes_pre_post/1040g3"
+)
+ACTION is.workflow.actions.gettext OK
+RESULT <WFContentCollection: 0x776fa2a080>: (
+    "<WFStringContentItem: 0x776b63e350>: /9j/4AAQSkZJRgABAQAAAAAAAAD/4QC6RXhpZgAATU0AKgAAAAgAAgEOAAIAAABiAAAAJodpAAQAAAABAAAAiAAAAAB7XCJjYXBh"
+)
+ACTION is.workflow.actions.base64encode OK
+RESULT <WFContentCollection: 0x776fa2a780>: (
+    "<WFImageContentItem: 0x776b63e260>: /9j/4AAQSkZJRgABAQAAAAAAAAD/4QC6RXhpZgAATU0AKgAAAAgAAgEOAAIAAABiAAAAJodpAAQAAAABAAAAiAAAAAB7XCJjYXBh"
+)
+ACTION is.workflow.actions.setitemname OK
+RESULT <WFContentCollection: 0x776fa2a060>: (
+    "<WFImageContentItem: 0x776b63e300>: 1"
+)
+ACTION is.workflow.actions.repeat.each OK
+RESULT <WFContentCollection: 0x776f56b880>: (
+    "<WFImageContentItem: 0x776b63e300>: 1"
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x776f56bac0>: (
+    "<WFNumberContentItem: 0x776b91f080>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x776f56bd60>: (
+    "<WFNumberContentItem: 0x776b91f080>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x776f56bd60>: (
+    "<WFNumberContentItem: 0x776b91f080>: 1"
+)
+ACTION is.workflow.actions.getitemfromlist OK
+RESULT <WFContentCollection: 0x776f56bbc0>: (
+    "<WFImageContentItem: 0x776b63e300>: 1"
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x776fa2aac0>: (
+    "<WFNumberContentItem: 0x776b646240>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x776fa2ac20>: (
+    "<WFNumberContentItem: 0x776b646240>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x776fa2ac20>: (
+    "<WFNumberContentItem: 0x776b646240>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x776fa2ade0>: (
+    "<WFNumberContentItem: 0x776b646240>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x776fa2ade0>: (
+    "<WFNumberContentItem: 0x776b646240>: 1"
+)
+ACTION is.workflow.actions.gettext OK
+RESULT <WFContentCollection: 0x776f9d3180>: (
+    "<WFStringContentItem: 0x776b94f2f0>: 1 \U56fe\U7247/\U5c01\U9762"
+)
+ACTION is.workflow.actions.setvariable OK
+RESULT <WFContentCollection: 0x776f9d2e60>: (
+    "<WFStringContentItem: 0x776b94f2f0>: 1 \U56fe\U7247/\U5c01\U9762"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x776f9d3740>: (
+    "<WFStringContentItem: 0x776b94f2f0>: 1 \U56fe\U7247/\U5c01\U9762"
+)
+ACTION is.workflow.actions.repeat.each OK
+RESULT <WFContentCollection: 0x776f9efd20>: (
+    "<WFImageContentItem: 0x776b63e300>: 1"
+)
+ACTION is.workflow.actions.getitemname OK
+RESULT <WFContentCollection: 0x776f56bcc0>: (
+    "<WFStringContentItem: 0x776b94f660>: 1"
+)
+ACTION is.workflow.actions.text.match OK
+RESULT <WFContentCollection: 0x776f5e4640>: (
+    "<WFCustomIntentOutputContentItem_7g83r3_TextMatch: 0x776b91f140>: 1"
+)
+ACTION is.workflow.actions.getitemfromlist OK
+RESULT <WFContentCollection: 0x776fa48060>: (
+    "<WFDictionaryContentItem: 0x776b91efc0>: Dictionary"
+)
+ACTION is.workflow.actions.setvariable OK
+RESULT <WFContentCollection: 0x776f5e4ba0>: (
+    "<WFDictionaryContentItem: 0x776b91efc0>: Dictionary"
+)
+ACTION is.workflow.actions.getvariable OK
+RESULT <WFContentCollection: 0x776f5e4e60>: (
+    "<WFStringContentItem: 0x776b94f2f0>: 1 \U56fe\U7247/\U5c01\U9762"
+)
+ACTION is.workflow.actions.text.match OK
+RESULT <WFContentCollection: 0x776fa48660>: (
+    "<WFCustomIntentOutputContentItem_7g83r3_TextMatch: 0x776b6463c0>: 1"
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x776fa485a0>: (
+    "<WFNumberContentItem: 0x776b646380>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x776fa48aa0>: (
+    "<WFNumberContentItem: 0x776b646380>: 1"
+)
+ACTION is.workflow.actions.getvalueforkey OK
+RESULT <WFContentCollection: 0x776fa48800>: (
+    "<WFStringContentItem: 0x776b63e8f0>: notes_pre_post/1040g3k8325mlrrs9l6005qjaok14u0011bbf4g0"
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x776f5e4fa0>: (
+    "<WFNumberContentItem: 0x776b91f200>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x776f5e57a0>: (
+    "<WFNumberContentItem: 0x776b91f200>: 1"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x776f5e57a0>: (
+    "<WFNumberContentItem: 0x776b91f200>: 1"
+)
+ACTION is.workflow.actions.gettext OK
+RESULT <WFContentCollection: 0x776fa488c0>: (
+    "<WFStringContentItem: 0x776b63e6c0>: https://ci.xiaohongshu.com/notes_pre_post/1040g3k8325mlrrs9l6005qjaok14u0011bbf4g0"
+)
+ACTION is.workflow.actions.appendvariable OK
+RESULT <WFContentCollection: 0x776fa48c00>: (
+    "<WFStringContentItem: 0x776b63e6c0>: https://ci.xiaohongshu.com/notes_pre_post/1040g3k8325mlrrs9l6005qjaok14u0011bbf4g0"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x776fa486a0>: (
+    "<WFStringContentItem: 0x776b63e6c0>: https://ci.xiaohongshu.com/notes_pre_post/1040g3k8325mlrrs9l6005qjaok14u0011bbf4g0"
+)
+ACTION is.workflow.actions.getvariable OK
+RESULT <WFContentCollection: 0x776fa48f60>: (
+    "<WFStringContentItem: 0x776b94f2f0>: 1 \U56fe\U7247/\U5c01\U9762"
+)
+ACTION is.workflow.actions.text.match OK
+RESULT <WFContentCollection: 0x776f5e53a0>: (
+)
+ACTION is.workflow.actions.count OK
+RESULT <WFContentCollection: 0x776f5e5540>: (
+    "<WFNumberContentItem: 0x776b91f380>: 0"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x776fa48b00>: (
+    "<WFNumberContentItem: 0x776b91f380>: 0"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x776fa48b00>: (
+    "<WFNumberContentItem: 0x776b91f380>: 0"
+)
+ACTION is.workflow.actions.repeat.each OK
+RESULT <WFContentCollection: 0x776fa48780>: (
+    "<WFNumberContentItem: 0x776b91f380>: 0"
+)
+ACTION is.workflow.actions.conditional OK
+RESULT <WFContentCollection: 0x776fa491c0>: (
+    "<WFNumberContentItem: 0x776b91f380>: 0"
+)
+ACTION is.workflow.actions.getvariable OK
+RESULT <WFContentCollection: 0x776fa49160>: (
+    "<WFStringContentItem: 0x776b63e6c0>: https://ci.xiaohongshu.com/notes_pre_post/1040g3k8325mlrrs9l6005qjaok14u0011bbf4g0"
+)
+DONE OK false
