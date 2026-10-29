@@ -38,6 +38,6 @@ run = subprocess.run(['swift','work/run-native.swift',str(path)], cwd=ROOT, capt
 log = run.stdout + run.stderr
 (ROOT/'work/wallpaper-parser.log').write_text(log)
 assert run.returncode == 0 and 'DONE OK false' in log, log[-1000:]
-assert 'https://ci.xiaohongshu.com/1040g2sg323jrojj8nuk05pd1b6l8gnpj4293vm0' in log
+assert 'https://ci.xiaohongshu.com/1040g2sg323jrojj8nuk05pd1b6l8gnpj4293vm0?imageView2/format/jpg' in log
 assert log.rstrip().endswith('DONE OK false') and ': 2"' in log[-1000:]
 print('Real wallpaper HTML parser passed: two original image URLs; no network/App/Photos calls')

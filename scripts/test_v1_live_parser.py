@@ -56,7 +56,7 @@ def note_pairs(html):
     for image in note["imageList"]:
         if image.get("livePhoto") is not True:
             continue
-        cover = "https://ci.xiaohongshu.com/" + image["fileId"]
+        cover = "https://ci.xiaohongshu.com/" + image["fileId"] + "?imageView2/format/jpg"
         video = image["stream"]["h264"][0]["masterUrl"].replace("http://", "https://", 1)
         pairs.append((cover, video))
     return pairs
